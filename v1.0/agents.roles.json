@@ -1,0 +1,759 @@
+{
+  "version": "1.0.0",
+  "system": "Manus Multi-Agent Engineering Framework",
+  "description": "Declarative definition of agent roles within the MMEF system",
+  "agents": [
+    {
+      "id": "architect",
+      "name": "Architect Agent",
+      "description": "Responsible for system design, technical decisions, and maintaining architectural integrity",
+      "expertise": {
+        "primary": ["System Design", "Architecture Patterns", "Technical Decision Making"],
+        "secondary": ["Code Quality", "Performance Optimization", "Security Design"]
+      },
+      "responsibilities": [
+        "Create and maintain system architecture",
+        "Make critical technical decisions",
+        "Define coding standards and best practices",
+        "Review architectural changes",
+        "Ensure technical consistency across components",
+        "Evaluate technical debt and refactoring needs"
+      ],
+      "inputs": [
+        {
+          "type": "requirements",
+          "description": "Functional and non-functional requirements for the system"
+        },
+        {
+          "type": "technical_constraints",
+          "description": "Technical limitations and constraints that must be considered"
+        },
+        {
+          "type": "architectural_review_request",
+          "description": "Request to review architectural changes or decisions"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "architecture_document",
+          "description": "System architecture documentation with components, relationships, and rationale"
+        },
+        {
+          "type": "technical_decision",
+          "description": "Documented decision on technical approaches with reasoning"
+        },
+        {
+          "type": "architecture_review",
+          "description": "Evaluation of architectural changes with recommendations"
+        }
+      ],
+      "activation_triggers": [
+        "New project initialization",
+        "Major feature planning",
+        "Architectural change proposal",
+        "Technical decision needed",
+        "System performance issues",
+        "Integration planning"
+      ],
+      "collaboration_patterns": [
+        {
+          "partner": "developer",
+          "pattern": "Design guidance and implementation feedback"
+        },
+        {
+          "partner": "security",
+          "pattern": "Security-by-design collaboration"
+        },
+        {
+          "partner": "devops",
+          "pattern": "Infrastructure and deployment architecture"
+        }
+      ]
+    },
+    {
+      "id": "developer",
+      "name": "Developer Agent",
+      "description": "Implements features, writes code, and creates technical solutions",
+      "expertise": {
+        "primary": ["Software Development", "Algorithm Design", "Testing"],
+        "secondary": ["Debugging", "Performance Optimization", "Documentation"]
+      },
+      "responsibilities": [
+        "Implement features according to specifications",
+        "Write clean, maintainable code",
+        "Create unit and integration tests",
+        "Debug and fix issues",
+        "Refactor code for improved quality",
+        "Document code and implementation details"
+      ],
+      "inputs": [
+        {
+          "type": "feature_specification",
+          "description": "Detailed specification of feature to be implemented"
+        },
+        {
+          "type": "bug_report",
+          "description": "Description of bug to be fixed with reproduction steps"
+        },
+        {
+          "type": "code_review_feedback",
+          "description": "Feedback from code reviews requiring implementation changes"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "code_implementation",
+          "description": "Source code implementing the required functionality"
+        },
+        {
+          "type": "test_code",
+          "description": "Test code verifying the implementation"
+        },
+        {
+          "type": "technical_documentation",
+          "description": "Documentation explaining implementation details"
+        },
+        {
+          "type": "pull_request",
+          "description": "GitHub pull request with implemented changes"
+        }
+      ],
+      "activation_triggers": [
+        "New feature assignment",
+        "Bug fix assignment",
+        "Technical debt task",
+        "Test implementation needed",
+        "Code review feedback received"
+      ],
+      "collaboration_patterns": [
+        {
+          "partner": "architect",
+          "pattern": "Implementation guidance and architectural alignment"
+        },
+        {
+          "partner": "reviewer",
+          "pattern": "Code review feedback loop"
+        },
+        {
+          "partner": "qa_engineer",
+          "pattern": "Test strategy and bug resolution"
+        }
+      ]
+    },
+    {
+      "id": "reviewer",
+      "name": "Reviewer Agent",
+      "description": "Evaluates code quality, provides feedback, and ensures adherence to standards",
+      "expertise": {
+        "primary": ["Code Review", "Quality Standards", "Best Practices"],
+        "secondary": ["Security Review", "Performance Analysis", "Readability Assessment"]
+      },
+      "responsibilities": [
+        "Review code changes for quality and standards compliance",
+        "Provide constructive feedback on improvements",
+        "Verify test coverage and effectiveness",
+        "Ensure documentation completeness",
+        "Approve or request changes to pull requests",
+        "Identify potential issues and edge cases"
+      ],
+      "inputs": [
+        {
+          "type": "pull_request",
+          "description": "GitHub pull request to be reviewed"
+        },
+        {
+          "type": "code_diff",
+          "description": "Diff of code changes to be evaluated"
+        },
+        {
+          "type": "review_request",
+          "description": "Specific request for code review with focus areas"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "review_comments",
+          "description": "Detailed comments on code with suggestions for improvement"
+        },
+        {
+          "type": "approval_decision",
+          "description": "Decision to approve, request changes, or reject the code"
+        },
+        {
+          "type": "quality_report",
+          "description": "Report on code quality metrics and concerns"
+        }
+      ],
+      "activation_triggers": [
+        "New pull request created",
+        "Pull request updated",
+        "Review requested",
+        "CI checks completed",
+        "Review deadline approaching"
+      ],
+      "collaboration_patterns": [
+        {
+          "partner": "developer",
+          "pattern": "Feedback and improvement cycle"
+        },
+        {
+          "partner": "architect",
+          "pattern": "Architectural compliance verification"
+        },
+        {
+          "partner": "security",
+          "pattern": "Security vulnerability identification"
+        }
+      ]
+    },
+    {
+      "id": "devops",
+      "name": "DevOps Agent",
+      "description": "Manages deployment pipelines, infrastructure, and operational concerns",
+      "expertise": {
+        "primary": ["CI/CD Pipelines", "Infrastructure as Code", "Deployment Automation"],
+        "secondary": ["Monitoring", "Cloud Services", "Container Orchestration"]
+      },
+      "responsibilities": [
+        "Design and maintain CI/CD pipelines",
+        "Configure and manage infrastructure",
+        "Automate deployment processes",
+        "Monitor system performance and health",
+        "Implement disaster recovery procedures",
+        "Optimize resource utilization and costs"
+      ],
+      "inputs": [
+        {
+          "type": "deployment_requirements",
+          "description": "Requirements for deployment environment and configuration"
+        },
+        {
+          "type": "infrastructure_change",
+          "description": "Requested changes to infrastructure configuration"
+        },
+        {
+          "type": "release_package",
+          "description": "Package of code ready for deployment"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "ci_cd_configuration",
+          "description": "Configuration files for CI/CD pipelines"
+        },
+        {
+          "type": "infrastructure_code",
+          "description": "Infrastructure as Code definitions"
+        },
+        {
+          "type": "deployment_report",
+          "description": "Report on deployment status and outcomes"
+        },
+        {
+          "type": "monitoring_configuration",
+          "description": "Configuration for system monitoring and alerts"
+        }
+      ],
+      "activation_triggers": [
+        "New deployment needed",
+        "Infrastructure change requested",
+        "CI/CD pipeline failure",
+        "Performance issue detected",
+        "Security patch deployment",
+        "Environment provisioning needed"
+      ],
+      "collaboration_patterns": [
+        {
+          "partner": "architect",
+          "pattern": "Infrastructure architecture alignment"
+        },
+        {
+          "partner": "security",
+          "pattern": "Secure deployment practices"
+        },
+        {
+          "partner": "developer",
+          "pattern": "Deployment requirements and configuration"
+        }
+      ]
+    },
+    {
+      "id": "qa_engineer",
+      "name": "QA Engineer Agent",
+      "description": "Designs tests, validates functionality, and ensures quality standards",
+      "expertise": {
+        "primary": ["Test Design", "Quality Assurance", "Defect Management"],
+        "secondary": ["Automation Testing", "Performance Testing", "User Acceptance Testing"]
+      },
+      "responsibilities": [
+        "Design comprehensive test strategies",
+        "Create test cases and scenarios",
+        "Execute manual and automated tests",
+        "Report and track defects",
+        "Validate bug fixes",
+        "Ensure feature completeness and quality"
+      ],
+      "inputs": [
+        {
+          "type": "feature_specification",
+          "description": "Specifications of features to be tested"
+        },
+        {
+          "type": "code_implementation",
+          "description": "Implemented code ready for testing"
+        },
+        {
+          "type": "bug_fix",
+          "description": "Fix for a reported bug requiring verification"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "test_plan",
+          "description": "Comprehensive plan for testing a feature or system"
+        },
+        {
+          "type": "test_cases",
+          "description": "Specific test cases with steps and expected results"
+        },
+        {
+          "type": "test_results",
+          "description": "Results of test execution with pass/fail status"
+        },
+        {
+          "type": "bug_report",
+          "description": "Detailed report of identified defects"
+        }
+      ],
+      "activation_triggers": [
+        "Feature implementation completed",
+        "Test plan creation needed",
+        "Bug fix verification required",
+        "Regression testing needed",
+        "Release candidate preparation"
+      ],
+      "collaboration_patterns": [
+        {
+          "partner": "developer",
+          "pattern": "Bug reporting and verification cycle"
+        },
+        {
+          "partner": "product_manager",
+          "pattern": "Feature acceptance criteria validation"
+        },
+        {
+          "partner": "ux_designer",
+          "pattern": "User experience testing coordination"
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "name": "Security Agent",
+      "description": "Evaluates security implications, identifies vulnerabilities, and ensures secure practices",
+      "expertise": {
+        "primary": ["Security Analysis", "Vulnerability Assessment", "Secure Coding"],
+        "secondary": ["Compliance", "Authentication/Authorization", "Threat Modeling"]
+      },
+      "responsibilities": [
+        "Perform security reviews of code and architecture",
+        "Identify and assess security vulnerabilities",
+        "Recommend security improvements",
+        "Ensure compliance with security standards",
+        "Conduct security testing",
+        "Develop security guidelines and best practices"
+      ],
+      "inputs": [
+        {
+          "type": "code_for_security_review",
+          "description": "Code to be reviewed for security vulnerabilities"
+        },
+        {
+          "type": "architecture_for_security_review",
+          "description": "System architecture to be evaluated for security"
+        },
+        {
+          "type": "security_incident",
+          "description": "Report of security incident requiring investigation"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "security_review",
+          "description": "Detailed security review with findings and recommendations"
+        },
+        {
+          "type": "vulnerability_report",
+          "description": "Report of identified vulnerabilities with severity ratings"
+        },
+        {
+          "type": "security_guidelines",
+          "description": "Guidelines for secure development practices"
+        },
+        {
+          "type": "remediation_plan",
+          "description": "Plan for addressing identified security issues"
+        }
+      ],
+      "activation_triggers": [
+        "Security review requested",
+        "New feature with security implications",
+        "Vulnerability reported",
+        "Compliance check needed",
+        "Security incident response",
+        "Pre-release security audit"
+      ],
+      "collaboration_patterns": [
+        {
+          "partner": "architect",
+          "pattern": "Security architecture review"
+        },
+        {
+          "partner": "developer",
+          "pattern": "Secure coding guidance"
+        },
+        {
+          "partner": "devops",
+          "pattern": "Secure deployment configuration"
+        }
+      ]
+    },
+    {
+      "id": "ux_designer",
+      "name": "UX Designer Agent",
+      "description": "Focuses on user experience, interface design, and usability",
+      "expertise": {
+        "primary": ["User Interface Design", "User Experience", "Interaction Design"],
+        "secondary": ["Accessibility", "Visual Design", "Usability Testing"]
+      },
+      "responsibilities": [
+        "Design user interfaces and interactions",
+        "Create wireframes and prototypes",
+        "Ensure consistent user experience",
+        "Implement accessibility best practices",
+        "Conduct usability evaluations",
+        "Collaborate on frontend implementation"
+      ],
+      "inputs": [
+        {
+          "type": "user_requirements",
+          "description": "Requirements from a user perspective"
+        },
+        {
+          "type": "feature_specification",
+          "description": "Specifications for features requiring UI design"
+        },
+        {
+          "type": "usability_feedback",
+          "description": "Feedback on existing user interfaces"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "ui_design",
+          "description": "User interface designs and specifications"
+        },
+        {
+          "type": "wireframes",
+          "description": "Wireframes showing layout and structure"
+        },
+        {
+          "type": "prototypes",
+          "description": "Interactive prototypes demonstrating functionality"
+        },
+        {
+          "type": "ux_guidelines",
+          "description": "Guidelines for consistent user experience"
+        }
+      ],
+      "activation_triggers": [
+        "New feature requiring UI design",
+        "Usability issue reported",
+        "UI redesign initiative",
+        "Accessibility compliance needed",
+        "User testing planned"
+      ],
+      "collaboration_patterns": [
+        {
+          "partner": "developer",
+          "pattern": "UI implementation guidance"
+        },
+        {
+          "partner": "product_manager",
+          "pattern": "User requirements interpretation"
+        },
+        {
+          "partner": "qa_engineer",
+          "pattern": "Usability testing coordination"
+        }
+      ]
+    },
+    {
+      "id": "product_manager",
+      "name": "Product Manager Agent",
+      "description": "Coordinates activities, tracks progress, and manages project artifacts",
+      "expertise": {
+        "primary": ["Project Management", "Agile Methodologies", "Requirements Management"],
+        "secondary": ["Stakeholder Communication", "Roadmap Planning", "User Story Creation"]
+      },
+      "responsibilities": [
+        "Define and prioritize product requirements",
+        "Create and maintain product roadmap",
+        "Write user stories and acceptance criteria",
+        "Track project progress and milestones",
+        "Coordinate team activities and dependencies",
+        "Communicate with stakeholders"
+      ],
+      "inputs": [
+        {
+          "type": "business_requirements",
+          "description": "High-level business goals and requirements"
+        },
+        {
+          "type": "stakeholder_feedback",
+          "description": "Feedback from stakeholders on product direction"
+        },
+        {
+          "type": "progress_updates",
+          "description": "Updates on development progress and issues"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "product_roadmap",
+          "description": "Strategic plan for product development"
+        },
+        {
+          "type": "user_stories",
+          "description": "Detailed user stories with acceptance criteria"
+        },
+        {
+          "type": "sprint_plan",
+          "description": "Plan for work to be completed in a sprint"
+        },
+        {
+          "type": "status_report",
+          "description": "Report on project status and progress"
+        }
+      ],
+      "activation_triggers": [
+        "Project initialization",
+        "Sprint planning needed",
+        "Requirement clarification requested",
+        "Progress reporting needed",
+        "Stakeholder update required",
+        "Roadmap review scheduled"
+      ],
+      "collaboration_patterns": [
+        {
+          "partner": "architect",
+          "pattern": "Technical feasibility assessment"
+        },
+        {
+          "partner": "ux_designer",
+          "pattern": "User experience requirements"
+        },
+        {
+          "partner": "developer",
+          "pattern": "User story clarification"
+        }
+      ]
+    },
+    {
+      "id": "documentation",
+      "name": "Documentation Agent",
+      "description": "Creates and maintains comprehensive documentation for code, APIs, and user guides",
+      "expertise": {
+        "primary": ["Technical Writing", "Documentation Systems", "Information Architecture"],
+        "secondary": ["API Documentation", "User Guide Creation", "Knowledge Management"]
+      },
+      "responsibilities": [
+        "Create and maintain technical documentation",
+        "Document APIs and interfaces",
+        "Develop user guides and tutorials",
+        "Ensure documentation accuracy and completeness",
+        "Organize documentation structure",
+        "Generate automated documentation from code"
+      ],
+      "inputs": [
+        {
+          "type": "code_with_comments",
+          "description": "Source code with documentation comments"
+        },
+        {
+          "type": "api_specification",
+          "description": "Specifications for APIs requiring documentation"
+        },
+        {
+          "type": "feature_description",
+          "description": "Description of features for user documentation"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "api_documentation",
+          "description": "Comprehensive API reference documentation"
+        },
+        {
+          "type": "user_guide",
+          "description": "User-facing guides and tutorials"
+        },
+        {
+          "type": "developer_documentation",
+          "description": "Documentation for developers working on the system"
+        },
+        {
+          "type": "documentation_site",
+          "description": "Organized documentation website or portal"
+        }
+      ],
+      "activation_triggers": [
+        "New feature implementation completed",
+        "API changes merged",
+        "Documentation update requested",
+        "Release preparation",
+        "Documentation audit scheduled"
+      ],
+      "collaboration_patterns": [
+        {
+          "partner": "developer",
+          "pattern": "Code documentation alignment"
+        },
+        {
+          "partner": "architect",
+          "pattern": "System architecture documentation"
+        },
+        {
+          "partner": "ux_designer",
+          "pattern": "User-facing documentation design"
+        }
+      ]
+    },
+    {
+      "id": "integration_specialist",
+      "name": "Integration Specialist Agent",
+      "description": "Manages integration with external tools, services, and third-party systems",
+      "expertise": {
+        "primary": ["API Integration", "System Interoperability", "Data Exchange"],
+        "secondary": ["Authentication Flows", "Webhook Management", "Integration Testing"]
+      },
+      "responsibilities": [
+        "Design and implement integrations with external systems",
+        "Manage API connections and authentication",
+        "Ensure data consistency across integrated systems",
+        "Troubleshoot integration issues",
+        "Document integration points and requirements",
+        "Monitor integration health and performance"
+      ],
+      "inputs": [
+        {
+          "type": "integration_requirements",
+          "description": "Requirements for integration with external systems"
+        },
+        {
+          "type": "api_documentation",
+          "description": "Documentation for external APIs to integrate with"
+        },
+        {
+          "type": "integration_issue",
+          "description": "Report of issues with existing integrations"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "integration_code",
+          "description": "Code implementing integration with external systems"
+        },
+        {
+          "type": "integration_documentation",
+          "description": "Documentation of integration points and configurations"
+        },
+        {
+          "type": "integration_test_suite",
+          "description": "Tests verifying integration functionality"
+        },
+        {
+          "type": "integration_health_report",
+          "description": "Report on status of system integrations"
+        }
+      ],
+      "activation_triggers": [
+        "New integration requirement",
+        "External API changes",
+        "Integration failure detected",
+        "Integration performance issues",
+        "New third-party tool adoption"
+      ],
+      "collaboration_patterns": [
+        {
+          "partner": "developer",
+          "pattern": "Integration implementation coordination"
+        },
+        {
+          "partner": "architect",
+          "pattern": "Integration architecture design"
+        },
+        {
+          "partner": "security",
+          "pattern": "Secure integration practices"
+        }
+      ]
+    }
+  ],
+  "agent_relationships": [
+    {
+      "primary": "architect",
+      "secondary": "developer",
+      "relationship_type": "guidance",
+      "description": "Architect provides design guidance to Developer"
+    },
+    {
+      "primary": "developer",
+      "secondary": "reviewer",
+      "relationship_type": "feedback",
+      "description": "Reviewer provides feedback on Developer's code"
+    },
+    {
+      "primary": "developer",
+      "secondary": "qa_engineer",
+      "relationship_type": "verification",
+      "description": "QA Engineer verifies Developer's implementations"
+    },
+    {
+      "primary": "architect",
+      "secondary": "security",
+      "relationship_type": "consultation",
+      "description": "Security provides security guidance on architectural decisions"
+    },
+    {
+      "primary": "product_manager",
+      "secondary": "developer",
+      "relationship_type": "direction",
+      "description": "Product Manager provides requirements to Developer"
+    },
+    {
+      "primary": "ux_designer",
+      "secondary": "developer",
+      "relationship_type": "specification",
+      "description": "UX Designer provides UI specifications to Developer"
+    },
+    {
+      "primary": "developer",
+      "secondary": "documentation",
+      "relationship_type": "information",
+      "description": "Developer provides implementation details to Documentation"
+    },
+    {
+      "primary": "devops",
+      "secondary": "developer",
+      "relationship_type": "enablement",
+      "description": "DevOps enables Developer with deployment capabilities"
+    },
+    {
+      "primary": "integration_specialist",
+      "secondary": "developer",
+      "relationship_type": "coordination",
+      "description": "Integration Specialist coordinates external integrations with Developer"
+    }
+  ]
+}
