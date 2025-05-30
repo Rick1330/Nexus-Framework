@@ -14,46 +14,46 @@ The external tool integration architecture is structured as a layered system wit
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                  NEXUS FRAMEWORK CORE                           │
+│                                        NEXUS FRAMEWORK CORE                                           │
 └───────────────────────────────┬─────────────────────────────────┘
-                                │
+                                                   │
 ┌───────────────────────────────▼─────────────────────────────────┐
-│                  EXTERNAL TOOL INTEGRATION LAYER                │
-│                                                                 │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌──────────┐│
-│  │ Integration │  │ Security    │  │ Credential  │  │ Rate     ││
-│  │ Registry    │  │ Gateway     │  │ Vault       │  │ Limiter  ││
-│  └─────────────┘  └─────────────┘  └─────────────┘  └──────────┘│
-│                                                                 │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌──────────┐│
-│  │ Request     │  │ Response    │  │ Error       │  │ Retry    ││
-│  │ Transformer │  │ Transformer │  │ Handler     │  │ Manager  ││
-│  └─────────────┘  └─────────────┘  └─────────────┘  └──────────┘│
-│                                                                 │
+│                                 EXTERNAL TOOL INTEGRATION LAYER                                       │
+│                                                                                                       │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌──────────┐     │
+│  │      Integration   │  │       Security      │  │     Credential      │  │     Rate       │     │
+│  │      Registry      │  │       Gateway       │  │     Vault           │  │     Limiter    │     │
+│  └─────────────┘  └─────────────┘  └─────────────┘  └──────────┘     │
+│                                                                                                       │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌──────────┐     │
+│  │       Request       │  │     Response       │  │     Error           │  │ Retry         │      │
+│  │       Transformer   │  │     Transformer    │  │     Handler         │  │ Manager       │      │
+│  └─────────────┘  └─────────────┘  └─────────────┘  └──────────┘     │
+│                                                                                                       │
 └───────────────────────────────┬─────────────────────────────────┘
-                                │
+                                                   │
 ┌───────────────────────────────▼─────────────────────────────────┐
-│                  TOOL-SPECIFIC ADAPTERS                         │
-│                                                                 │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌──────────┐│
-│  │ Frontend    │  │ Cloud       │  │ Code        │  │ DevOps   ││
-│  │ Generation  │  │ Services    │  │ Generation  │  │ Tools    ││
-│  │ Adapters    │  │ Adapters    │  │ Adapters    │  │ Adapters ││
-│  └─────────────┘  └─────────────┘  └─────────────┘  └──────────┘│
-│                                                                 │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌──────────┐│
-│  │ AI/ML       │  │ Testing     │  │ Analytics   │  │ Security ││
-│  │ Service     │  │ Tool        │  │ Platform    │  │ Tool     ││
-│  │ Adapters    │  │ Adapters    │  │ Adapters    │  │ Adapters ││
-│  └─────────────┘  └─────────────┘  └─────────────┘  └──────────┘│
-│                                                                 │
+│                                        TOOL-SPECIFIC ADAPTERS                                         │
+│                                                                                                       │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌──────────┐     │
+│  │      Frontend       │  │      Cloud         │  │     Code            │  │    DevOps     │      │
+│  │      Generation     │  │      Services      │  │     Generation      │  │    Tools      │      │
+│  │      Adapters       │  │      Adapters      │  │     Adapters        │  │    Adapters   │      │
+│  └─────────────┘  └─────────────┘  └─────────────┘  └──────────┘     │
+|                                                                                                        │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌──────────┐     │
+│  │      AI/ML          │  │     Testing        │  │     Analytics       │  │    Security    │     │
+│  │      Service        │  │     Tool           │  │     Platform        │  │    Tool        │     │
+│  │      Adapters       │  │     Adapters       │  │     Adapters        │  │    Adapters    │     │
+│  └─────────────┘  └─────────────┘  └─────────────┘  └──────────┘     │
+│                                                                                                       │
 └───────────────────────────────┬─────────────────────────────────┘
-                                │
-                                ▼
+                                                   │
+                                                   ▼
 ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐
-│ External        │  │ External        │  │ External        │
-│ Frontend Tools  │  │ Cloud Services  │  │ Development     │
-│ (v0.dev, etc.)  │  │ (AWS, etc.)     │  │ Tools           │
+│       External            │  │      External             │  │      External             │
+│       Frontend Tools      │  │      Cloud Services       │  │      Development          │
+│       (v0.dev, etc.)      │  │      (AWS, etc.)          │  │      Tools                │
 └─────────────────┘  └─────────────────┘  └─────────────────┘
 ```
 
@@ -215,72 +215,72 @@ End-to-end workflow for frontend generation:
 
 ```
 ┌───────────────┐
-│ Requirements  │
-│ Analysis      │
+│      Requirements      │
+│      Analysis          │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Design        │
-│ Specification │
+│      Design            │
+│      Specification     │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Design Prompt │
-│ Generation    │
+│     Design Prompt      │
+│     Generation         │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ External Tool │
-│ Selection     │
+│     External Tool      │
+│     Selection          │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ API Request   │
-│ Preparation   │
+│     API Request        │
+│     Preparation        │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ External Tool │
-│ Invocation    │
+│    External Tool       │
+│    Invocation          │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Response      │
-│ Processing    │
+│    Response            │
+│    Processing          │
 └───────┬───────┘
-        │
+            │
 ┌───────▼───────┐
-│ Design        │
-│ Review        │
+│    Design              │
+│    Review              │
 └───────┬───────┘
-        │
-        │ Approved?
-        │
-        ├───No────────┐
-        │             │
-        │             ▼
-        │      ┌──────────────┐
-        │      │ Design       │
-        │      │ Refinement   │
-        │      └──────┬───────┘
-        │             │
-        └─────────────┘
-        │
-        │ Yes
-        ▼
+             │
+             │ Approved?
+             │
+             ├───No────────┐
+             │                    │
+             │                    ▼
+             │          ┌──────────────┐
+             │          │         Design       │
+             │          │         Refinement   │
+             │          └──────┬───────┘
+             │                     │
+             └─────────────┘
+             │
+             │ Yes
+             ▼
 ┌───────────────┐
-│ Code          │
-│ Integration   │
+│       Code             │
+│       Integration      │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Testing and   │
-│ Validation    │
+│      Testing and       │
+│      Validation        │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Deployment    │
-│ Preparation   │
+│      Deployment        │
+│      Preparation       │
 └───────────────┘
 ```
 
@@ -476,68 +476,68 @@ End-to-end continuous deployment pipeline:
 
 ```
 ┌───────────────┐
-│ Code          │
-│ Repository    │
+│          Code          │
+│          Repository    │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Build         │
-│ Trigger       │
+│          Build         │
+│          Trigger       │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Code          │
-│ Checkout      │
+│          Code          │
+│          Checkout      │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Dependency    │
-│ Installation  │
+│          Dependency    │
+│          Installation  │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Build         │
-│ Process       │
+│          Build         │
+│          Process       │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Test          │
-│ Execution     │
+│          Test          │
+│          Execution     │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Artifact      │
-│ Generation    │
+│          Artifact      │
+│          Generation    │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Environment   │
-│ Selection     │
+│          Environment   │
+│          Selection     │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Infrastructure│
-│ Provisioning  │
+│          Infrastructure│
+│          Provisioning  │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Deployment    │
-│ Execution     │
+│          Deployment    │
+│          Execution     │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Post-Deploy   │
-│ Testing       │
+│          Post-Deploy   │
+│          Testing       │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Monitoring    │
-│ Configuration │
+│          Monitoring    │
+│          Configuration │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Notification  │
-│ Dispatch      │
+│          Notification  │
+│          Dispatch      │
 └───────────────┘
 ```
 
@@ -627,75 +627,75 @@ End-to-end workflow for code generation:
 
 ```
 ┌───────────────┐
-│ Requirements  │
-│ Analysis      │
+│          Requirements  │
+│          Analysis      │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Code          │
-│ Specification │
+│          Code          │
+│          Specification │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Generation    │
-│ Prompt        │
-│ Creation      │
+│          Generation    │
+│          Prompt        │
+│          Creation      │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Tool          │
-│ Selection     │
+│          Tool          │
+│          Selection     │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Code          │
-│ Generation    │
-│ Request       │
+│          Code          │
+│          Generation    │
+│          Request       │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Generated     │
-│ Code          │
-│ Processing    │
+│          Generated     │
+│          Code          │
+│          Processing    │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Code          │
-│ Review        │
+│          Code          │
+│          Review        │
 └───────┬───────┘
-        │
-        │ Approved?
-        │
-        ├───No────────┐
-        │             │
-        │             ▼
-        │      ┌──────────────┐
-        │      │ Prompt       │
-        │      │ Refinement   │
-        │      └──────┬───────┘
-        │             │
-        └─────────────┘
-        │
-        │ Yes
-        ▼
+             │
+             │ Approved?
+             │
+             ├───No────────┐
+             │                    │
+             │                    ▼
+             │          ┌──────────────┐
+             │          │         Prompt       │
+             │          │         Refinement   │
+             │          └──────┬───────┘
+             │                     │
+             └─────────────┘
+             │
+             │ Yes
+             ▼
 ┌───────────────┐
-│ Code          │
-│ Integration   │
+│          Code          │
+│          Integration   │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Testing and   │
-│ Validation    │
+│          Testing and   │
+│          Validation    │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Documentation │
-│ Generation    │
+│          Documentation │
+│          Generation    │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Code          │
-│ Deployment    │
+│          Code          │
+│          Deployment    │
 └───────────────┘
 ```
 
@@ -970,11 +970,11 @@ The Nexus Framework implements sophisticated integration patterns:
 Using adapters for tool integration:
 
 ```
-┌───────────────┐     ┌───────────────┐     ┌───────────────┐
-│ Nexus         │     │ Tool-Specific │     │ External      │
-│ Framework     ├────►│ Adapter       ├────►│ Tool          │
-│               │     │               │     │               │
-└───────────────┘     └───────────────┘     └───────────────┘
+┌───────────────┐       ┌───────────────┐        ┌───────────────┐
+│          Nexus         │       │          Tool-Specific │        │         External      │
+│          Framework     ├────►│          Adapter       ├────►│         Tool          │
+│                        │       │                        │        │                       │
+└───────────────┘       └───────────────┘        └───────────────┘
 ```
 
 Key characteristics:
@@ -994,25 +994,25 @@ Using facades for simplified integration:
 
 ```
 ┌───────────────┐
-│ Nexus         │
-│ Framework     │
+│          Nexus         │
+│          Framework     │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Integration   │
-│ Facade        │
+│          Integration   │
+│          Facade        │
 └───────┬───────┘
-        │
-        ├─────────────────┬─────────────────┐
-        │                 │                 │
+             │
+             ├─────────────────┬─────────────────┐
+             │                           │                           │
 ┌───────▼───────┐  ┌──────▼──────┐  ┌───────▼───────┐
-│ Tool A        │  │ Tool B      │  │ Tool C        │
-│ Adapter       │  │ Adapter     │  │ Adapter       │
+│          Tool A        │  │        Tool B      │  │          Tool C        │
+│          Adapter       │  │        Adapter     │  │          Adapter       │
 └───────┬───────┘  └──────┬──────┘  └───────┬───────┘
-        │                 │                 │
+             │                          │                          │
 ┌───────▼───────┐  ┌──────▼──────┐  ┌───────▼───────┐
-│ External      │  │ External    │  │ External      │
-│ Tool A        │  │ Tool B      │  │ Tool C        │
+│          External      │  │        External    │  │          External      │
+│          Tool A        │  │        Tool B      │  │          Tool C        │
 └───────────────┘  └─────────────┘  └───────────────┘
 ```
 
@@ -1033,31 +1033,31 @@ Using gateways for controlled access:
 
 ```
 ┌───────────────┐
-│ Nexus         │
-│ Framework     │
+│          Nexus         │
+│          Framework     │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Integration   │
-│ Gateway       │
+│          Integration   │
+│          Gateway       │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Security      │
-│ Layer         │
+│          Security      │
+│          Layer         │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Routing       │
-│ Layer         │
+│          Routing       │
+│          Layer         │
 └───────┬───────┘
-        │
-        ├─────────────────┬─────────────────┐
-        │                 │                 │
-┌───────▼───────┐  ┌──────▼──────┐  ┌───────▼───────┐
-│ External      │  │ External    │  │ External      │
-│ Tool A        │  │ Tool B      │  │ Tool C        │
-└───────────────┘  └─────────────┘  └───────────────┘
+             │
+             ├─────────────────┬─────────────────┐
+             │                           │                           │
+┌───────▼───────┐    ┌──────▼──────┐   ┌───────▼───────┐
+│          External      │    │        External    │    │         External      │
+│          Tool A        │    │        Tool B      │    │         Tool C        │
+└───────────────┘    └─────────────┘   └───────────────┘
 ```
 
 Key characteristics:
@@ -1077,28 +1077,28 @@ Using commands for tool operations:
 
 ```
 ┌───────────────┐
-│ Nexus         │
-│ Framework     │
+│          Nexus         │
+│          Framework     │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Command       │
-│ Invoker       │
+│          Command       │
+│          Invoker       │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Command       │
-│ Object        │
+│          Command       │
+│          Object        │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Tool          │
-│ Adapter       │
+│          Tool          │
+│          Adapter       │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ External      │
-│ Tool          │
+│          External      │
+│          Tool          │
 └───────────────┘
 ```
 
