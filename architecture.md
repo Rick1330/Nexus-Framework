@@ -27,43 +27,43 @@ The Nexus Framework is organized into seven distinct layers, each with specific 
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                      HUMAN INTERFACE LAYER                      │
-│  Strategic Direction  |  Review & Approval  |  Expert Guidance  │
+│                                        HUMAN INTERFACE LAYER                                          │
+│          Strategic Direction       |     Review & Approval       |      Expert Guidance               │
 └───────────────────────────────┬─────────────────────────────────┘
-                                │
+                                                   │
 ┌───────────────────────────────▼─────────────────────────────────┐
-│                     STRATEGIC OVERSIGHT LAYER                    │
-│  System Architects  |  Project Directors  |  Domain Strategists │
+│                                      STRATEGIC OVERSIGHT LAYER                                        │
+│          System Architects         |     Project Directors       |     Domain Strategists             │
 └───────────────────────────────┬─────────────────────────────────┘
-                                │
+                                                   │
 ┌───────────────────────────────▼─────────────────────────────────┐
-│                    ORCHESTRATION ENGINE LAYER                    │
-│ Workflow Manager | Resource Allocator | Knowledge Integrator    │
+│                                    ORCHESTRATION ENGINE LAYER                                         │
+│          Workflow Manager         |      Resource Allocator      |     Knowledge Integrator           │
 └─┬─────────────────┬─────────────────┬──────────────────┬────────┘
-  │                 │                 │                  │
+   │                           │                           │                             │
 ┌─▼─────────────────▼─────────────────▼──────────────────▼────────┐
-│                    SPECIALIZED AGENT LAYER                       │
-│                                                                  │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐         │
-│  │ Design   │  │ Develop  │  │ Validate │  │ Deploy   │  ...    │
-│  │ Agents   │  │ Agents   │  │ Agents   │  │ Agents   │         │
-│  └──────────┘  └──────────┘  └──────────┘  └──────────┘         │
+│                                       SPECIALIZED AGENT LAYER                                         │
+│                                                                                                       │
+│  ┌──────────┐       ┌──────────┐      ┌──────────┐      ┌──────────┐      │
+│  │     Design     │       │     Develop    │      │    Validate    │      │    Deploy     │  ..  │
+│  │       Agents   │       │     Agents     │      │    Agents      │      │    Agents     │      │
+│  └──────────┘       └──────────┘      └──────────┘      └──────────┘      │
 └─┬─────────────────┬─────────────────┬──────────────────┬────────┘
-  │                 │                 │                  │
+   │                           │                           │                            │
 ┌─▼─────────────────▼─────────────────▼──────────────────▼────────┐
-│                    DOMAIN ADAPTATION LAYER                       │
-│ Web | Mobile | ML | Infrastructure | CLI | Desktop | Embedded    │
+│                                    DOMAIN ADAPTATION LAYER                                            │
+│      Web    |    Mobile   |    ML    |    Infrastructure    |    CLI    |   Desktop   |   Embedded    │
 └─┬─────────────────┬─────────────────┬──────────────────┬────────┘
-  │                 │                 │                  │
+   │                           │                           │                             │
 ┌─▼─────────────────▼─────────────────▼──────────────────▼────────┐
-│                    INTEGRATION LAYER                             │
-│ Tool Connectors | External APIs | Service Adapters | Data Bridge │
+│                                          INTEGRATION LAYER                                            │
+│      Tool Connectors     |      External APIs     |     Service Adapters     |     Data Bridge        │
 └─┬─────────────────┬─────────────────┬──────────────────┬────────┘
-  │                 │                 │                  │
+   │                           │                           │                            │
 ┌─▼─────────────────▼─────────────────▼──────────────────▼────────┐
-│                    FOUNDATION LAYER                              │
-│ Knowledge Base | Verification Engine | Simulation Environment    │
-└──────────────────────────────────────────────────────────────────┘
+│                                         FOUNDATION LAYER                                              │
+│          Knowledge Base       |        Verification Engine       |      Simulation Environment        │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
 ### 3.1 Human Interface Layer
@@ -155,16 +155,16 @@ The Nexus Framework employs several patterns for agent specialization and collab
 
 #### 4.1.1 Hierarchical Delegation
 ```
-Strategic Oversight Agent
-        │
-        ▼
+     Strategic Oversight Agent
+             │
+             ▼
 ┌───────────────────┐
-│ Tactical Agent    │
+│        Tactical Agent        │
 └───────┬───────────┘
-        │
-        ▼
+             │
+             ▼
 ┌───────────────────┐
-│ Specialized Agent │
+│        Specialized Agent     │
 └───────────────────┘
 ```
 
@@ -172,13 +172,13 @@ Strategic agents delegate to tactical agents, which further delegate to speciali
 
 #### 4.1.2 Peer Collaboration
 ```
+┌───────────┐       ┌───────────┐
+│ Agent A         │◄───►│     Agent B     │
+└─────┬─────┘       └─────┬─────┘
+          │                          │
+          ▼                          ▼
 ┌───────────┐     ┌───────────┐
-│ Agent A   │◄───►│ Agent B   │
-└─────┬─────┘     └─────┬─────┘
-      │                 │
-      ▼                 ▼
-┌───────────┐     ┌───────────┐
-│ Output A  │     │ Output B  │
+│      Output A    │     |      Output B    │
 └───────────┘     └───────────┘
 ```
 
@@ -187,10 +187,10 @@ Agents at the same level collaborate as peers, sharing information and coordinat
 #### 4.1.3 Consensus Formation
 ```
 ┌───────────┐     ┌───────────┐     ┌───────────┐
-│ Agent A   │     │ Agent B   │     │ Agent C   │
+|      Agent A     │     |      Agent B     │     |      Agent C     │      
 └─────┬─────┘     └─────┬─────┘     └─────┬─────┘
-      │                 │                 │
-      ▼                 ▼                 ▼
+          │                        │                        │
+          ▼                        ▼                        ▼
 ┌───────────────────────────────────────────────┐
 │              Consensus Protocol               │
 └─────────────────────┬─────────────────────────┘
@@ -209,46 +209,46 @@ The Nexus Framework supports sophisticated workflow orchestration patterns:
 
 #### 4.2.1 Parallel Execution
 ```
-                ┌───────────┐
-                │ Task A    │
-┌───────────┐   └───────────┘   ┌───────────┐
-│ Workflow  │───►┌───────────┐  │ Results   │
-│ Manager   │   │ Task B    │──►│ Aggregator│
-└───────────┘   └───────────┘   └───────────┘
-                ┌───────────┐
-                │ Task C    │
-                └───────────┘
+                        ┌───────────┐
+                        │ Task A          │
+┌───────────┐   └───────────┘      ┌───────────┐
+│ Workflow        │───►┌───────────┐    │       Results   │
+│ Manager         │      │ Task B          │──►│       Aggregator│
+└───────────┘     └───────────┘    └───────────┘
+                        ┌───────────┐
+                        │     Task C      │
+                        └───────────┘
 ```
 
 Multiple tasks are executed in parallel, with results aggregated when all are complete.
 
 #### 4.2.2 Conditional Branching
 ```
-                ┌───────────┐
-                │ Condition │
-┌───────────┐   └─────┬─────┘   ┌───────────┐
-│ Workflow  │         │         │ Path A    │
-│ Manager   │─────────┼────────►│ Execution │
-└───────────┘         │         └───────────┘
-                      │
-                      │         ┌───────────┐
-                      └────────►│ Path B    │
-                                │ Execution │
-                                └───────────┘
+                         ┌───────────┐
+                         │        Condition │
+┌───────────┐     └─────┬─────┘    ┌───────────┐
+│ Workflow         │              │              │       Path A    │
+│ Manager          │─────────┼────────►│       Execution │
+└───────────┘               │             └───────────┘
+                                   │
+                                   │              ┌───────────┐
+                                   └────────►│        Path B    │
+                                                  │        Execution │
+                                                  └───────────┘
 ```
 
 Workflow paths are selected based on conditions evaluated at runtime.
 
 #### 4.2.3 Iterative Refinement
 ```
-┌───────────┐    ┌───────────┐    ┌───────────┐
-│ Initial   │───►│ Evaluation│───►│ Refinement│
-│ Solution  │    └───────────┘    └─────┬─────┘
-└───────────┘                           │
-                                        │
-                  ┌───────────────────┐ │
-                  │ Final Solution    │◄┘
-                  └───────────────────┘
+┌───────────┐      ┌───────────┐      ┌───────────┐
+│        Initial   │───►│ Evaluation      │───►│        Refinement│
+│        Solution  │      └───────────┘     └─────┬─────┘
+└───────────┘                                          │
+                                                               │
+                             ┌───────────────────┐ │
+                             │      Final Solution          │◄┘
+                             └───────────────────┘
 ```
 
 Solutions are iteratively refined based on evaluation feedback until quality criteria are met.
@@ -259,48 +259,48 @@ The Nexus Framework implements robust fallback and recovery mechanisms:
 
 #### 4.3.1 Circuit Breaker
 ```
-┌───────────┐    ┌───────────┐    ┌───────────┐
-│ Request   │───►│ Circuit   │───►│ External  │
-│           │    │ Breaker   │    │ Service   │
-└───────────┘    └─────┬─────┘    └───────────┘
-                       │
-                       │          ┌───────────┐
-                       └─────────►│ Fallback  │
-                                  │ Service   │
-                                  └───────────┘
+┌───────────┐     ┌───────────┐      ┌───────────┐
+│       Request   │───►│       Circuit   │───►│        External  │
+│                 │      │       Breaker   │      │       Service   │
+└───────────┘     └─────┬─────┘      └───────────┘
+                                   │
+                                   │               ┌───────────┐
+                                   └─────────►│       Fallback  │
+                                                    │       Service   │
+                                                    └───────────┘
 ```
 
 Prevents cascading failures by detecting problems and switching to fallback mechanisms.
 
 #### 4.3.2 Checkpoint-Restart
 ```
-┌───────────┐    ┌───────────┐    ┌───────────┐
-│ Process   │───►│ Checkpoint│    │ Failure   │
-│ Execution │    │ Creation  │    │ Detection │
-└───────────┘    └───────────┘    └─────┬─────┘
-                       ▲                │
-                       │                │
-                       │          ┌─────▼─────┐
-                       └──────────│ Restart   │
-                                  │ from      │
-                                  │ Checkpoint│
-                                  └───────────┘
+┌───────────┐     ┌───────────┐             ┌───────────┐
+│ Process         │───►│    Checkpoint   │             │     Failure      │
+│ Execution       │      │    Creation     │             │    Detection     │
+└───────────┘     └───────────┘             └─────┬─────┘
+                                          ▲                         │
+                                          │                         │
+                                          │                ┌─────▼─────┐
+                                          └──────────│     Restart      │
+                                                           │        from      │
+                                                           │     Checkpoint   │
+                                                           └───────────┘
 ```
 
 Saves state at critical points to enable recovery from failures without starting over.
 
 #### 4.3.3 Progressive Enhancement
 ```
-┌───────────┐    ┌───────────┐    ┌───────────┐
-│ Core      │───►│ Enhanced  │───►│ Advanced  │
-│ Solution  │    │ Solution  │    │ Solution  │
-└───────────┘    └───────────┘    └───────────┘
-       ▲               ▲                ▲
-       │               │                │
-┌──────┴──────┐ ┌──────┴──────┐ ┌──────┴──────┐
-│ Fallback to │ │ Fallback to │ │ Fallback to │
-│ Core        │ │ Enhanced    │ │ Previous    │
-└─────────────┘ └─────────────┘ └─────────────┘
+┌───────────┐     ┌───────────┐      ┌───────────┐
+│      Core       │───►│     Enhanced    │───►│     Advanced    │
+│     Solution    │      │     Solution    │      │     Solution    │
+└───────────┘     └───────────┘      └───────────┘
+           ▲                           ▲                          ▲
+           │                           │                          │
+┌──────┴──────┐     ┌──────┴──────┐    ┌──────┴──────┐
+│    Fallback to      │     │      Fallback to   │    │     Fallback to     │
+│         Core        │     │       Enhanced     │    │     Previous        │
+└─────────────┘     └─────────────┘    └─────────────┘
 ```
 
 Builds solutions in layers, with each layer falling back to the previous if problems occur.
@@ -311,49 +311,49 @@ The Nexus Framework employs sophisticated knowledge management patterns:
 
 #### 4.4.1 Blackboard Architecture
 ```
-┌───────────┐    ┌───────────┐    ┌───────────┐
-│ Agent A   │    │ Shared    │    │ Agent B   │
-│           │◄──►│ Knowledge │◄──►│           │
-└───────────┘    │ Space     │    └───────────┘
-                 └─────┬─────┘
-                       │
-                 ┌─────▼─────┐
-                 │ Agent C   │
-                 │           │
-                 └───────────┘
-```
+┌───────────┐     ┌───────────┐      ┌───────────┐
+│     Agent A     │      │      Shared     │      │     Agent B     │
+│                 │◄──►│      Knowledge   │◄──►│                 │
+└───────────┘     │       Space      │      └───────────┘
+                          └─────┬─────┘
+                                   │
+                          ┌─────▼─────┐
+                          │      Agent C    │
+                          │                 │
+                          └───────────┘
+```  
 
 Agents share knowledge through a common repository, enabling asynchronous collaboration.
 
 #### 4.4.2 Knowledge Graph
 ```
-                 ┌───────────┐
-                 │ Concept A │
-                 └─────┬─────┘
-                       │
-┌───────────┐    ┌─────▼─────┐    ┌───────────┐
-│ Concept B │────│ Concept C │────│ Concept D │
-└───────────┘    └───────────┘    └───────────┘
-                       │
-                 ┌─────▼─────┐
-                 │ Concept E │
-                 └───────────┘
+                          ┌───────────┐
+                          │    Concept A     │
+                          └─────┬─────┘
+                                    │
+┌───────────┐      ┌─────▼─────┐       ┌───────────┐
+│    Concept B    │────│     Concept C    │────│     Concept D    │
+└───────────┘      └───────────┘       └───────────┘
+                                    │
+                          ┌─────▼─────┐
+                          │     Concept E    │
+                          └───────────┘
 ```
 
 Knowledge is represented as a graph of interconnected concepts, enabling sophisticated reasoning and inference.
 
 #### 4.4.3 Contextual Memory
 ```
-┌───────────┐    ┌───────────┐    ┌───────────┐
-│ Short-term│    │ Working   │    │ Long-term │
-│ Memory    │───►│ Memory    │───►│ Memory    │
-└───────────┘    └───────────┘    └───────────┘
-                       ▲
-                       │
-                 ┌─────▼─────┐
-                 │ Retrieval │
-                 │ Mechanism │
-                 └───────────┘
+┌───────────┐      ┌───────────┐      ┌───────────┐
+│    Short-term    │      │     Working     │      │    Long-term    │
+│        Memory    │───►│     Memory      │───►│      Memory      │
+└───────────┘      └───────────┘      └───────────┘
+                                    ▲
+                                    │
+                          ┌─────▼─────┐
+                          │    Retrieval    │
+                          │    Mechanism    │
+                          └───────────┘
 ```
 
 Different types of memory are used for different purposes, with mechanisms for transferring knowledge between them.
