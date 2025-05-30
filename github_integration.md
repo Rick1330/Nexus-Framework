@@ -116,62 +116,62 @@ Defined lifecycle for different branch types:
 
 ```
 ┌─────────────────┐
-│ Feature Request │
-│ or Bug Report   │
+│        Feature Request    │
+│        or Bug Report      │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Create Feature  │
-│ Branch          │
+│        Create Feature     │
+│        Branch             │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Development     │
-│ and Testing     │
+│       Development         │
+│       and Testing         │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Create Pull     │
-│ Request         │
+│       Create Pull         │
+│       Request             │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Code Review     │
-│ and Iteration   │
+│      Code Review          │
+│      and Iteration        │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Merge to        │
-│ Develop         │
+│      Merge to             │
+│      Develop              │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Create Release  │
-│ Branch          │
+│      Create Release       │
+│      Branch               │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Final Testing   │
-│ and Validation  │
+│      Final Testing        │
+│      and Validation       │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Merge to Main   │
-│ and Tag Release │
+│     Merge to Main         │
+│     and Tag Release       │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Deploy to       │
-│ Production      │
+│      Deploy to            │
+│      Production           │
 └─────────────────┘
 ```
 
@@ -413,78 +413,78 @@ The Nexus Framework implements a sophisticated CI/CD pipeline:
 
 ```
 ┌─────────────────┐
-│ Code Commit     │
+│        Code Commit        │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Trigger CI      │
-│ Workflow        │
+│        Trigger CI         │
+│        Workflow           │
 └────────┬────────┘
-         │
-         ├─────────────────┬─────────────────┬─────────────────┐
-         │                 │                 │                 │
-         ▼                 ▼                 ▼                 ▼
-┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
-│ Code Linting    │ │ Unit Testing    │ │ Static Analysis │ │ Security Scan   │
-└────────┬────────┘ └────────┬────────┘ └────────┬────────┘ └────────┬────────┘
-         │                   │                   │                   │
-         └───────────────────┼───────────────────┼───────────────────┘
-                             │                   │
-                             ▼                   ▼
+              │
+              ├─────────────────┬─────────────────┬─────────────────┐
+              │                           │                           │                           │
+              ▼                           ▼                           ▼                           ▼
+┌─────────────┐      ┌─────────────┐       ┌─────────────┐        ┌─────────────┐
+│    Code Linting    │       │    Unit Testing    │       │   Static Analysis   │        │   Security Scan
+└──────┬──────┘      └──────┬──────┘       └──────┬──────┘        └──────┬──────┘
+         │                              │                              │                             |
+         └───────────────────┼───────────────────┼──────────────────┘
+                                         │                              │
+                                         ▼                              ▼
                      ┌─────────────────┐ ┌─────────────────┐
-                     │ Build           │ │ Documentation   │
-                     │ Artifacts       │ │ Generation      │
+                     │           Build           │ │         Documentation     │
+                     │           Artifacts       │ │         Generation        │
                      └────────┬────────┘ └────────┬────────┘
-                              │                   │
-                              └───────────────────┘
-                                        │
-                                        ▼
-                              ┌─────────────────┐
-                              │ Integration     │
-                              │ Testing         │
-                              └────────┬────────┘
-                                       │
-                                       ▼
-                              ┌─────────────────┐
-                              │ Deployment to   │
-                              │ Staging         │
-                              └────────┬────────┘
-                                       │
-                                       ▼
-                              ┌─────────────────┐
-                              │ E2E Testing     │
-                              └────────┬────────┘
-                                       │
-                                       ▼
-                              ┌─────────────────┐
-                              │ Performance     │
-                              │ Testing         │
-                              └────────┬────────┘
-                                       │
-                                       ▼
-                              ┌─────────────────┐
-                              │ Approval        │
-                              │ Gate            │
-                              └────────┬────────┘
-                                       │
-                                       ▼
-                              ┌─────────────────┐
-                              │ Deployment to   │
-                              │ Production      │
-                              └────────┬────────┘
-                                       │
-                                       ▼
-                              ┌─────────────────┐
-                              │ Post-Deployment │
-                              │ Verification    │
-                              └────────┬────────┘
-                                       │
-                                       ▼
-                              ┌─────────────────┐
-                              │ Release         │
-                              │ Notification    │
-                              └─────────────────┘
+                                   │                              │
+                                   └───────────────────┘
+                                                   │
+                                                   ▼
+                                    ┌─────────────────┐
+                                    │         Integration       │
+                                    │         Testing           │
+                                    └────────┬────────┘
+                                                  │
+                                                  ▼
+                                   ┌─────────────────┐
+                                   │        Deployment to      │
+                                   │        Staging            │
+                                   └────────┬────────┘
+                                                 │
+                                                 ▼
+                                   ┌─────────────────┐
+                                   │        E2E Testing        │
+                                   └────────┬────────┘
+                                                 │
+                                                 ▼
+                                  ┌─────────────────┐
+                                  │        Performance        │
+                                  │        Testing            │
+                                  └────────┬────────┘
+                                                │
+                                                ▼
+                                 ┌─────────────────┐
+                                 │          Approval         │
+                                 │          Gate             │
+                                 └────────┬────────┘
+                                               │
+                                               ▼
+                                 ┌─────────────────┐
+                                 │          Deployment to    │
+                                 │          Production       │
+                                 └────────┬────────┘
+                                               │
+                                               ▼
+                                 ┌─────────────────┐
+                                 │        Post-Deployment    │
+                                 │         Verification      │
+                                 └────────┬────────┘
+                                               │
+                                               ▼
+                                ┌─────────────────┐
+                                │          Release          │
+                                │          Notification     │
+                                └─────────────────┘
 ```
 
 ### 3.2 CI Workflow Configuration
@@ -825,50 +825,50 @@ The Nexus Framework implements a sophisticated pull request lifecycle:
 
 ```
 ┌─────────────────┐
-│ Developer       │
-│ Creates PR      │
+│         Developer         │
+│         Creates PR        │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Automated       │
-│ Checks Run      │
+│        Automated          │
+│        Checks Run         │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ PR Assigned     │
-│ to Reviewers    │
+│       PR Assigned         │
+│       to Reviewers        │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Code Review     │
-│ Process         │
+│      Code Review          │
+│      Process              │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Developer       │
-│ Addresses       │
-│ Feedback        │
+│      Developer            │
+│      Addresses            │
+│      Feedback             │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Final           │
-│ Approval        │
+│      Final                │
+│      Approval             │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ PR Merged       │
+│      PR Merged            │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Branch          │
-│ Cleanup         │
+│      Branch               │
+│      Cleanup              │
 └─────────────────┘
 ```
 
@@ -959,48 +959,48 @@ The Nexus Framework implements a sophisticated issue lifecycle:
 
 ```
 ┌─────────────────┐
-│ Issue           │
-│ Creation        │
+│           Issue           │
+│           Creation        │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Triage          │
+│           Triage          │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Prioritization  │
+│           Prioritization  │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Assignment      │
+│           Assignment      │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Implementation  │
+│           Implementation  │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Review          │
+│           Review          │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Testing         │
+│           Testing         │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Verification    │
+│           Verification    │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Closure         │
+│           Closure         │
 └─────────────────┘
 ```
 
@@ -1056,61 +1056,61 @@ The Nexus Framework implements a sophisticated release lifecycle:
 
 ```
 ┌─────────────────┐
-│ Release         │
-│ Planning        │
+│           Release         │
+│           Planning        │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Feature         │
-│ Freeze          │
+│           Feature         │
+│           Freeze          │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Create Release  │
-│ Branch          │
+│           Create Release  │
+│           Branch          │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Release         │
-│ Candidate       │
-│ Testing         │
+│           Release         │
+│           Candidate       │
+│           Testing         │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Bug Fixing      │
+│           Bug Fixing      │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Release         │
-│ Approval        │
+│           Release         │
+│           Approval        │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Version         │
-│ Tagging         │
+│           Version         │
+│           Tagging         │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Deployment      │
+│           Deployment      │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Post-Release    │
-│ Monitoring      │
+│           Post-Release    │
+│           Monitoring      │
 └────────┬────────┘
-         │
-         ▼
+              │
+              ▼
 ┌─────────────────┐
-│ Release         │
-│ Documentation   │
+│           Release         │
+│           Documentation   │
 └─────────────────┘
 ```
 
@@ -1470,7 +1470,7 @@ curl -X POST \
 ## Notes
 
 [Additional information, caveats, or important notes about the endpoint]
-```
+
 
 ## 8. Collaboration Workflows
 
@@ -1480,31 +1480,31 @@ The Nexus Framework implements a sophisticated team collaboration model:
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                  PRODUCT MANAGEMENT                             │
-│  Requirements | Prioritization | Roadmap                        │
+│                                        PRODUCT MANAGEMENT                                             │
+│         Requirements       |        Prioritization          |          Roadmap                        │
 └───────────────────────────┬─────────────────────────────────────┘
-                            │
+                                            │
 ┌───────────────────────────┼─────────────────────────────────────┐
-│                           │                                     │
-│  ┌─────────────┐  ┌───────▼───────┐  ┌─────────────┐            │
-│  │ Frontend    │  │ Architecture  │  │ Backend     │            │
-│  │ Team        │◄─┤ Team          ├─►│ Team        │            │
-│  └──────┬──────┘  └───────────────┘  └──────┬──────┘            │
-│         │                                   │                   │
-│  ┌──────▼──────┐                     ┌──────▼──────┐            │
-│  │ UX/UI       │                     │ Data        │            │
-│  │ Team        │                     │ Team        │            │
-│  └──────┬──────┘                     └──────┬──────┘            │
-│         │                                   │                   │
-└─────────┼───────────────────────────────────┼───────────────────┘
-          │                                   │
-┌─────────┼───────────────────────────────────┼───────────────────┐
-│         │                                   │                   │
-│  ┌──────▼──────┐  ┌─────────────┐  ┌────────▼─────┐             │
-│  │ QA          │  │ DevOps      │  │ Security     │             │
-│  │ Team        │  │ Team        │  │ Team         │             │
-│  └─────────────┘  └─────────────┘  └──────────────┘             │
-│                                                                 │
+│                                           │                                                          │
+│  ┌─────────────┐   ┌───────▼───────┐   ┌─────────────┐                    │
+│  │       Frontend      │   │     Architecture      │   │       Backend       │                    │
+│  │       Team          │◄─┤     Team              ├─►│        Team          │                   │
+│  └──────┬──────┘   └───────────────┘   └──────┬──────┘                    │
+│             │                                                       │                               │
+│  ┌──────▼──────┐                                 ┌──────▼──────┐                    │
+│  │         UX/UI       │                                 │        Data        │                    │
+│  │         Team        │                                 │        Team        │                    │
+│  └──────┬──────┘                                 └──────┬──────┘                    │
+│             │                                                       │                               │
+└────────┼───────────────────────────────────┼───────────────────┘
+               │                                                       │
+┌────────┼───────────────────────────────────┼───────────────────┐
+│             │                                                       │                              │
+│  ┌──────▼──────┐   ┌─────────────┐   ┌────────▼─────┐                m    │
+│  │         QA          │   │        DevOps      │   │         Security     │                     │
+│  │         Team        │   │        Team        │   │         Team         │                     │
+│  └─────────────┘   └─────────────┘   └──────────────┘                     │
+│                                                                                                      │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -1797,7 +1797,7 @@ Your first task will be a small, self-contained feature or bug fix to help you g
 Your mentor will help you select an appropriate first task and guide you through the process.
 
 Welcome to the team!
-```
+
 
 ## 10. Conclusion
 
