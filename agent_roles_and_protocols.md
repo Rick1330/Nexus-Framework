@@ -19,14 +19,14 @@ The agent roles are organized in a hierarchical structure with four primary tier
 │        Domain Architect      |         Algorithm Designer    |       DevOps Engineer           │
 │         UX Architect         |           Data Architect      |       Security Analyst          │
 └───────────────────────────────┬─────────────────────────────┘
-                                │
+                                                   │
 ┌───────────────────────────────▼─────────────────────────────┐
 │                                           OPERATIONAL TIER                                      │
 │     Frontend Developer       |         Backend Developer      |          ML Engineer            │
 │     Infrastructure Engineer  |         QA Engineer            |          Documentation          │
 │     Mobile Developer         |         Systems Engineer       |          Database Engineer      │
 └───────────────────────────────┬─────────────────────────────┘
-                                │
+                                                   │
 ┌───────────────────────────────▼─────────────────────────────┐
 │                                           SPECIALIST TIER                                       │
 │     Performance Optimizer   |        Accessibility Expert     |          Localization           │
