@@ -14,34 +14,34 @@ The multi-domain architecture is structured as an interconnected system of speci
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                  STRATEGIC COORDINATION LAYER                   │
-│  System Architecture | Cross-Domain Planning | Resource Allocation │
+│                                    STRATEGIC COORDINATION LAYER                                       │
+│         System Architecture      |      Cross-Domain Planning      |       Resource Allocation        │
 └───────────────────────────────┬─────────────────────────────────┘
-                                │
+                                                   │
 ┌───────────────────────────────┼─────────────────────────────────┐
-│                                                                 │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌──────────┐│
-│  │ Frontend    │  │ Backend     │  │ Data        │  │ ML/AI    ││
-│  │ Domain      │  │ Domain      │  │ Domain      │  │ Domain   ││
-│  │ Engine      │  │ Engine      │  │ Engine      │  │ Engine   ││
-│  └──────┬──────┘  └──────┬──────┘  └──────┬──────┘  └────┬─────┘│
-│         │                │                │               │     │
-│  ┌──────┴──────┐  ┌──────┴──────┐  ┌──────┴──────┐  ┌────┴─────┐│
-│  │ DevOps/Infra│  │ Security    │  │ QA/Testing  │  │ Mobile   ││
-│  │ Domain      │  │ Domain      │  │ Domain      │  │ Domain   ││
-│  │ Engine      │  │ Engine      │  │ Engine      │  │ Engine   ││
-│  └──────┬──────┘  └──────┬──────┘  └──────┬──────┘  └────┬─────┘│
-│         │                │                │               │     │
+│                                                                                                       │
+│  ┌─────────────┐   ┌─────────────┐   ┌─────────────┐   ┌──────────┐  │
+│  │       Frontend      │   │      Backend       │   │      Data           │   │     ML/AI      │  │
+│  │       Domain        │   │      Domain        │   │      Domain         │   │     Domain     │  │
+│  │       Engine        │   │      Engine        │   │      Engine         │   │     Engine     │  │
+│  └──────┬──────┘   └──────┬──────┘   └──────┬──────┘   └────┬─────┘  │
+│             │                         │                         │                      │            │
+│  ┌──────┴──────┐   ┌──────┴──────┐   ┌──────┴──────┐   ┌────┴─────┐  │
+│  │       DevOps/Infra  │   │      Security      │   │      QA/Testing     │   │     Mobile     │  │
+│  │       Domain        │   │      Domain        │   │      Domain         │   │     Domain     │  │
+│  │       Engine        │   │      Engine        │   │      Engine         │   │     Engine     │  │
+│  └──────┬──────┘   └──────┬──────┘   └──────┬──────┘   └────┬─────┘  │
+│              │                         │                         │                      │           │
 └─────────┼────────────────┼────────────────┼───────────────┼─────┘
-          │                │                │               │
+                │                         │                          │                       │
 ┌─────────┴────────────────┴────────────────┴───────────────┴─────┐
-│                  CROSS-DOMAIN INTEGRATION LAYER                 │
-│  Interface Management | Dependency Resolution | Conflict Mediation │
+│                                  CROSS-DOMAIN INTEGRATION LAYER                                       │
+│       Interface Management      |      Dependency Resolution     |       Conflict Mediation           │
 └───────────────────────────────┬─────────────────────────────────┘
-                                │
+                                                   │
 ┌───────────────────────────────┼─────────────────────────────────┐
-│                  UNIFIED QUALITY ASSURANCE                      │
-│  Cross-Domain Testing | Integrated Validation | System Verification │
+│                                      UNIFIED QUALITY ASSURANCE                                        │
+│       Cross-Domain Testing      |      Integrated Validation     |       System Verification          │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -744,51 +744,51 @@ Workflow for developing a complete feature:
 
 ```
 ┌───────────────┐
-│ Requirements  │
-│ Definition    │
+│          Requirements  │
+│          Definition    │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Architecture  │
-│ Design        │
+│          Architecture  │
+│          Design        │
 └───────┬───────┘
-        │
-        ├─────────────────┬─────────────────┬─────────────────┐
-        │                 │                 │                 │
-┌───────▼───────┐  ┌──────▼──────┐  ┌───────▼───────┐  ┌──────▼──────┐
-│ Frontend      │  │ Backend     │  │ Data          │  │ Other       │
-│ Development   │  │ Development │  │ Development   │  │ Domains     │
-└───────┬───────┘  └──────┬──────┘  └───────┬───────┘  └──────┬──────┘
-        │                 │                 │                 │
-        └─────────────────┴─────────────────┴─────────────────┘
-                                │
+             │
+             ├─────────────────┬─────────────────┬─────────────────┐
+             │                           │                           │                           │
+┌───────▼───────┐    ┌──────▼──────┐   ┌───────▼───────┐   ┌──────▼──────┐
+│          Frontend      │    │        Backend     │    │         Data          │   │         Other       │
+│          Development   │    │        Development │    │         Development   │   │         Domains     │
+└───────┬───────┘    └──────┬──────┘   └───────┬───────┘   └──────┬──────┘
+             │                           │                           │                           │
+             └─────────────────┴─────────────────┴─────────────────┘
+                                     │
                         ┌───────▼───────┐
-                        │ Integration   │
-                        │ Testing       │
+                        │          Integration   │
+                        │          Testing       │
                         └───────┬───────┘
-                                │
+                                     │
                         ┌───────▼───────┐
-                        │ Security      │
-                        │ Review        │
+                        │          Security      │
+                        │          Review        │
                         └───────┬───────┘
-                                │
+                                     │
                         ┌───────▼───────┐
-                        │ Performance   │
-                        │ Testing       │
+                        │          Performance   │
+                        │          Testing       │
                         └───────┬───────┘
-                                │
+                                     │
                         ┌───────▼───────┐
-                        │ User          │
-                        │ Acceptance    │
+                        │          User          │
+                        │          Acceptance    │
                         └───────┬───────┘
-                                │
+                                    │
                         ┌───────▼───────┐
-                        │ Deployment    │
-                        │ Preparation   │
+                        │          Deployment    │
+                        │          Preparation   │
                         └───────┬───────┘
-                                │
+                                     │
                         ┌───────▼───────┐
-                        │ Release       │
+                        │          Release       │
                         └───────────────┘
 ```
 
@@ -798,51 +798,51 @@ Coordination of parallel development across domains:
 
 ```
                         ┌───────────────┐
-                        │ Project       │
-                        │ Kickoff       │
+                        │          Project       │
+                        │          Kickoff       │
                         └───────┬───────┘
-                                │
+                                     │
                         ┌───────▼───────┐
-                        │ Cross-Domain  │
-                        │ Planning      │
+                        │          Cross-Domain  │
+                        │          Planning      │
                         └───────┬───────┘
-                                │
+                                     │
                         ┌───────▼───────┐
-                        │ Interface     │
-                        │ Contract      │
-                        │ Definition    │
+                        │          Interface     │
+                        │          Contract      │
+                        │          Definition    │
                         └───────┬───────┘
-                                │
-┌───────────────────────────────┼───────────────────────────────┐
-│                               │                               │
-│  ┌─────────────┐  ┌───────────▼─────────────┐  ┌─────────────┐│
-│  │ Domain A    │  │ Cross-Domain           │  │ Domain B    ││
-│  │ Development │◄─┤ Coordination           ├─►│ Development ││
-│  └──────┬──────┘  │ - Status Tracking      │  └──────┬──────┘│
-│         │         │ - Dependency Management │         │      │
-│  ┌──────▼──────┐  │ - Issue Resolution     │  ┌──────▼──────┐│
-│  │ Domain A    │  │ - Integration Planning │  │ Domain B    ││
-│  │ Testing     │  └───────────┬─────────────  │ Testing     ││
-│  └──────┬──────┘              │               └──────┬──────┘│
-│         │                     │                      │      │
+                                     │
+┌──────────────────────┼──────────────────────────────────────┐
+│                                   │                                                            │
+│  ┌─────────────┐  ┌───────────▼─────────────┐   ┌─────────────┐│
+│  │         Domain A   │   │         Cross-Domain                  │   │         Domain B    ││
+│  │        Development │◄─┤          Coordination                 ├─►│      Development    ││
+│  └──────┬──────┘  │       - Status Tracking               │   └──────┬──────┘│
+│             │             │       - Dependency Management         │              │           │
+│  ┌──────▼──────┐  │       - Issue Resolution              │   ┌──────▼──────┐│
+│  │       Domain A      │  │      - Integration Planning           │   │        Domain B    ││
+│  │       Testing       │  └───────────┬─────────────    │        Testing     ││
+│  └──────┬──────┘                      │                       └──────┬──────┘│
+│              │                                 │                                  │           │
 └─────────┼─────────────────────┼──────────────────────┼──────┘
-          │                     │                      │
-          └─────────────────────┼──────────────────────┘
-                                │
-                        ┌───────▼───────┐
-                        │ Integration   │
-                        │ Testing       │
-                        └───────┬───────┘
-                                │
-                        ┌───────▼───────┐
-                        │ Release       │
-                        │ Readiness     │
-                        │ Review        │
-                        └───────┬───────┘
-                                │
-                        ┌───────▼───────┐
-                        │ Deployment    │
-                        └───────────────┘
+                │                                 │                                   │
+                └─────────────────────┼──────────────────────┘
+                                                   │
+                                      ┌───────▼───────┐
+                                      │       Integration      │
+                                      │       Testing          │
+                                      └───────┬───────┘
+                                                   │
+                                      ┌───────▼───────┐
+                                      │        Release         │
+                                      │        Readiness       │
+                                      │        Review          │
+                                      └───────┬───────┘
+                                                   │
+                                      ┌───────▼───────┐
+                                      │        Deployment      │
+                                       └───────────────┘
 ```
 
 #### 5.1.3 Iterative Multi-Domain Development
@@ -851,64 +851,64 @@ Iterative development across multiple domains:
 
 ```
 ┌───────────────┐
-│ Initial       │
-│ Planning      │
+│          Initial       │
+│          Planning      │
 └───────┬───────┘
-        │
-        ▼
+             │
+             ▼
 ┌───────────────────┐
-│ Iteration Planning│
+│       Iteration Planning     │
 └───────┬───────────┘
-        │
-        ▼
+             │
+             ▼
 ┌───────────────────┐
-│ Interface Contract│
-│ Updates           │
+│       Interface Contract     │
+│       Updates                │
 └───────┬───────────┘
-        │
-        ├─────────────────┬─────────────────┬─────────────────┐
-        │                 │                 │                 │
-        ▼                 ▼                 ▼                 ▼
+             │
+             ├─────────────────┬─────────────────┬─────────────────┐
+             │                           │                           │                           │
+             ▼                           ▼                           ▼                           ▼
 ┌───────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐
-│ Domain A      │  │ Domain B     │  │ Domain C     │  │ Domain D     │
-│ Development   │  │ Development  │  │ Development  │  │ Development  │
+│          Domain A      │  │         Domain B     │  │         Domain C     │  │         Domain D     │
+│          Development   │  │         Development  │  │         Development  │  │         Development  │
 └───────┬───────┘  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘
-        │                 │                 │                 │
-        └─────────────────┴─────────────────┴─────────────────┘
-                                │
-                                ▼
+             │                          │                          │                          │
+             └─────────────────┴─────────────────┴───────────────┘
+                                         │
+                                         ▼
                         ┌───────────────┐
-                        │ Integration   │
+                        │          Integration   │
                         └───────┬───────┘
-                                │
-                                ▼
+                                     │
+                                     ▼
                         ┌───────────────┐
-                        │ Testing       │
+                        │          Testing       │
                         └───────┬───────┘
-                                │
-                                ▼
+                                     │
+                                     ▼
                         ┌───────────────┐
-                        │ Demo/Review   │
+                        │          Demo/Review   │
                         └───────┬───────┘
-                                │
-                                ▼
+                                     │
+                                     ▼
                         ┌───────────────┐
-                        │ Iteration     │
-                        │ Retrospective │
+                        │          Iteration     │
+                        │          Retrospective │
                         └───────┬───────┘
-                                │
-                                ▼
+                                     │
+                                     ▼
                         ┌───────────────┐
-                        │ Next Iteration│◄─────┐
-                        │ or Release    │      │
-                        └───────┬───────┘      │
-                                │              │
-                                └──────No──────┘
-                                │
-                                │ Yes
-                                ▼
+                        │          Next Iteration│◄─────┐
+                        │          or Release    │         │
+                        └───────┬───────┘         │
+                                     │                     │
+                                     └──────No──────┘
+                                     │
+                                     │ Yes
+                                     ▼
                         ┌───────────────┐
-                        │ Release       │
+                        │          Release       │
                         └───────────────┘
 ```
 
@@ -922,25 +922,25 @@ Multi-level testing strategy across domains:
 
 ```
                         ┌───────────────┐
-                        │   End-to-End  │
-                        │    Testing    │
+                        │        End-to-End      │
+                        │        Testing         │
                         └───────────────┘
                         
                   ┌─────────────────────────┐
-                  │     Integration         │
-                  │       Testing           │
+                  │              Integration               │
+                  │              Testing                   │
                   └─────────────────────────┘
                   
             ┌─────────────────────────────────────┐
-            │           Contract Testing           │
+            │                   Contract Testing                        │
             └─────────────────────────────────────┘
             
       ┌─────────────────────────────────────────────────┐
-      │               Component Testing                  │
+      │                         Component Testing                                    │
       └─────────────────────────────────────────────────┘
       
 ┌─────────────────────────────────────────────────────────────┐
-│                       Unit Testing                           │
+│                               Unit Testing                                                      │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -964,53 +964,53 @@ Coordination of testing across domains:
 
 ```
 ┌───────────────┐
-│ Test          │
-│ Planning      │
+│          Test          │
+│          Planning      │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Test          │
-│ Environment   │
-│ Setup         │
+│          Test          │
+│          Environment   │
+│          Setup         │
 └───────┬───────┘
-        │
-        ├─────────────────┬─────────────────┬─────────────────┐
-        │                 │                 │                 │
-┌───────▼───────┐  ┌──────▼──────┐  ┌───────▼───────┐  ┌──────▼──────┐
-│ Domain A      │  │ Domain B    │  │ Domain C      │  │ Domain D    │
-│ Testing       │  │ Testing     │  │ Testing       │  │ Testing     │
-└───────┬───────┘  └──────┬──────┘  └───────┬───────┘  └──────┬──────┘
-        │                 │                 │                 │
-        └─────────────────┴─────────────────┴─────────────────┘
-                                │
+             │
+             ├─────────────────┬─────────────────┬─────────────────┐
+             │                           │                           │                           │
+┌───────▼───────┐    ┌──────▼──────┐   ┌───────▼───────┐   ┌──────▼──────┐
+│          Domain A      │    │        Domain B    │    │         Domain C      │   │         Domain D    │
+│          Testing       │    │        Testing     │    │         Testing       │   │         Testing     │
+└───────┬───────┘    └──────┬──────┘   └───────┬───────┘   └──────┬──────┘
+             │                           │                           │                           │
+             └─────────────────┴─────────────────┴─────────────────┘
+                                    │
                         ┌───────▼───────┐
-                        │ Integration   │
-                        │ Testing       │
+                        │          Integration   │
+                        │          Testing       │
                         └───────┬───────┘
-                                │
+                                     │
                         ┌───────▼───────┐
-                        │ End-to-End    │
-                        │ Testing       │
+                        │          End-to-End    │
+                        │          Testing       │
                         └───────┬───────┘
-                                │
+                                     │
                         ┌───────▼───────┐
-                        │ Non-Functional│
-                        │ Testing       │
+                        │          Non-Functional│
+                        │          Testing       │
                         └───────┬───────┘
-                                │
+                                     │
                         ┌───────▼───────┐
-                        │ Test Results  │
-                        │ Analysis      │
+                        │          Test Results  │
+                        │          Analysis      │
                         └───────┬───────┘
-                                │
+                                     │
                         ┌───────▼───────┐
-                        │ Issue         │
-                        │ Tracking      │
+                        │          Issue         │
+                        │          Tracking      │
                         └───────┬───────┘
-                                │
+                                    │
                         ┌───────▼───────┐
-                        │ Test Report   │
-                        │ Generation    │
+                        │          Test Report   │
+                        │          Generation    │
                         └───────────────┘
 ```
 
@@ -1024,54 +1024,54 @@ End-to-end deployment pipeline:
 
 ```
 ┌───────────────┐
-│ Release       │
-│ Planning      │
+│          Release       │
+│          Planning      │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Release       │
-│ Readiness     │
-│ Assessment    │
+│          Release       │
+│          Readiness     │
+│          Assessment    │
 └───────┬───────┘
-        │
+            │
 ┌───────▼───────┐
-│ Deployment    │
-│ Planning      │
+│          Deployment    │
+│          Planning      │
 └───────┬───────┘
-        │
-        ├─────────────────┬─────────────────┬─────────────────┐
-        │                 │                 │                 │
-┌───────▼───────┐  ┌──────▼──────┐  ┌───────▼───────┐  ┌──────▼──────┐
-│ Domain A      │  │ Domain B    │  │ Domain C      │  │ Domain D    │
-│ Preparation   │  │ Preparation │  │ Preparation   │  │ Preparation │
-└───────┬───────┘  └──────┬──────┘  └───────┬───────┘  └──────┬──────┘
-        │                 │                 │                 │
-        └─────────────────┴─────────────────┴─────────────────┘
-                                │
+             │
+             ├─────────────────┬─────────────────┬─────────────────┐
+             │                           │                           │                           │
+┌───────▼───────┐    ┌──────▼──────┐   ┌───────▼───────┐   ┌──────▼──────┐
+│          Domain A      │    │        Domain B    │    │         Domain C      │   │         Domain D    │
+│          Preparation   │    │        Preparation │    │         Preparation   │   │         Preparation │
+└───────┬───────┘    └──────┬──────┘   └───────┬───────┘   └──────┬──────┘
+             │                            │                          │                           │
+             └─────────────────┴─────────────────┴─────────────────┘
+                                    │
                         ┌───────▼───────┐
-                        │ Deployment    │
-                        │ Orchestration │
+                        │          Deployment    │
+                        │          Orchestration │
                         └───────┬───────┘
-                                │
+                                     │
                         ┌───────▼───────┐
-                        │ Deployment    │
-                        │ Execution     │
+                        │          Deployment    │
+                        │          Execution     │
                         └───────┬───────┘
-                                │
+                                     │
                         ┌───────▼───────┐
-                        │ Deployment    │
-                        │ Verification  │
+                        │          Deployment    │
+                        │          Verification  │
                         └───────┬───────┘
-                                │
+                                     │
                         ┌───────▼───────┐
-                        │ Post-         │
-                        │ Deployment    │
-                        │ Monitoring    │
+                        │          Post-         │
+                        │          Deployment    │
+                        │          Monitoring    │
                         └───────┬───────┘
-                                │
+                                     │
                         ┌───────▼───────┐
-                        │ Deployment    │
-                        │ Finalization  │
+                        │          Deployment    │
+                        │          Finalization  │
                         └───────────────┘
 ```
 
@@ -1110,22 +1110,22 @@ Coordination mechanisms for deployment:
 Integration through a centralized API gateway:
 
 ```
-┌───────────────┐  ┌───────────────┐  ┌───────────────┐
-│ Client        │  │ Client        │  │ Client        │
-│ Application   │  │ Application   │  │ Application   │
-└───────┬───────┘  └───────┬───────┘  └───────┬───────┘
-        │                  │                  │
-        └──────────────────┼──────────────────┘
-                           │
-                    ┌──────▼──────┐
-                    │ API Gateway │
-                    └──────┬──────┘
-                           │
-        ┌──────────────────┼──────────────────┐
-        │                  │                  │
+┌───────────────┐   ┌───────────────┐    ┌───────────────┐
+│          Client        │   │         Client        │     │         Client        │
+│          Application   │   │         Application   │     │         Application   │
+└───────┬───────┘   └───────┬───────┘    └───────┬───────┘
+             │                            │                             │
+             └──────────────────┼──────────────────┘
+                                          │
+                              ┌──────▼──────┐
+                              │         API Gateway │
+                              └──────┬──────┘
+                                         │
+           ┌──────────────────┼──────────────────┐
+           │                             │                            │
 ┌───────▼───────┐  ┌───────▼───────┐  ┌───────▼───────┐
-│ Domain A      │  │ Domain B      │  │ Domain C      │
-│ Services      │  │ Services      │  │ Services      │
+│          Domain A      │  │         Domain B      │  │           Domain C      │
+│          Services      │  │         Services      │  │           Services      │
 └───────────────┘  └───────────────┘  └───────────────┘
 ```
 
@@ -1146,22 +1146,22 @@ Integration through event-based communication:
 
 ```
 ┌───────────────┐  ┌───────────────┐  ┌───────────────┐
-│ Domain A      │  │ Domain B      │  │ Domain C      │
-│ Services      │  │ Services      │  │ Services      │
+│         Domain A      │   │         Domain B      │   │         Domain C      │
+│         Services      │   │         Services      │   │         Services      │
 └───────┬───────┘  └───────┬───────┘  └───────┬───────┘
-        │                  │                  │
-        └──────────────────┼──────────────────┘
-                           │
-                    ┌──────▼──────┐
-                    │ Event Bus   │
-                    └──────┬──────┘
-                           │
-        ┌──────────────────┼──────────────────┐
-        │                  │                  │
-┌───────▼───────┐  ┌───────▼───────┐  ┌───────▼───────┐
-│ Domain A      │  │ Domain B      │  │ Domain C      │
-│ Consumers     │  │ Consumers     │  │ Consumers     │
-└───────────────┘  └───────────────┘  └───────────────┘
+            │                            │                            │
+            └──────────────────┼──────────────────┘
+                                          │
+                               ┌──────▼──────┐
+                               │         Event Bus   │
+                               └──────┬──────┘
+                                          │
+            ┌──────────────────┼──────────────────┐
+            │                             │                            │
+┌───────▼───────┐   ┌───────▼───────┐   ┌───────▼───────┐
+│          Domain A      │   │         Domain B      │    │         Domain C      │
+│          Consumers     │   │         Consumers     │    │         Consumers     │
+└───────────────┘   └───────────────┘   └───────────────┘
 ```
 
 Key characteristics:
@@ -1180,17 +1180,17 @@ Key characteristics:
 Integration through shared data storage:
 
 ```
-┌───────────────┐  ┌───────────────┐  ┌───────────────┐
-│ Domain A      │  │ Domain B      │  │ Domain C      │
-│ Services      │  │ Services      │  │ Services      │
-└───────┬───────┘  └───────┬───────┘  └───────┬───────┘
-        │                  │                  │
-        └──────────────────┼──────────────────┘
-                           │
-                    ┌──────▼──────┐
-                    │ Shared      │
-                    │ Database    │
-                    └─────────────┘
+┌───────────────┐    ┌───────────────┐   ┌───────────────┐
+│          Domain A      │    │         Domain B      │    │         Domain C      │
+│          Services      │    │         Services      │    │         Services      │
+└───────┬───────┘    └───────┬───────┘   └───────┬───────┘
+             │                             │                            │
+             └──────────────────┼──────────────────┘
+                                           │
+                                ┌──────▼──────┐
+                                │         Shared      │
+                                │         Database    │
+                                └─────────────┘
 ```
 
 Key characteristics:
@@ -1209,23 +1209,23 @@ Key characteristics:
 Integration through fine-grained services:
 
 ```
-┌───────────────┐  ┌───────────────┐  ┌───────────────┐
-│ Domain A      │  │ Domain B      │  │ Domain C      │
-│ Microservices │  │ Microservices │  │ Microservices │
-└───────┬───────┘  └───────┬───────┘  └───────┬───────┘
-        │                  │                  │
-        └──────────────────┼──────────────────┘
-                           │
-                    ┌──────▼──────┐
-                    │ Service     │
-                    │ Mesh        │
-                    └──────┬──────┘
-                           │
+┌───────────────┐    ┌───────────────┐   ┌───────────────┐
+│          Domain A      │    │         Domain B      │    │         Domain C      │
+│          Microservices │    │         Microservices │    │         Microservices │
+└───────┬───────┘    └───────┬───────┘   └───────┬───────┘
+             │                             │                            │
+             └──────────────────┼──────────────────┘
+                                      │
+                           ┌──────▼──────┐
+                           │        Service     │
+                           │        Mesh        │
+                           └──────┬──────┘
+                                      │
         ┌──────────────────┼──────────────────┐
-        │                  │                  │
+        │                              │                           │
 ┌───────▼───────┐  ┌───────▼───────┐  ┌───────▼───────┐
-│ API Gateway   │  │ Service       │  │ External      │
-│               │  │ Discovery     │  │ Systems       │
+│          API Gateway   │  │         Service       │   │         External      │
+│                        │  │         Discovery     │   │         Systems       │
 └───────────────┘  └───────────────┘  └───────────────┘
 ```
 
@@ -1246,20 +1246,20 @@ Integration through specialized backends:
 
 ```
 ┌───────────────┐  ┌───────────────┐  ┌───────────────┐
-│ Web           │  │ Mobile        │  │ IoT           │
-│ Frontend      │  │ Frontend      │  │ Frontend      │
+│         Web           │   │         Mobile        │   │         IoT           │
+│         Frontend      │   │         Frontend      │   │         Frontend      │
 └───────┬───────┘  └───────┬───────┘  └───────┬───────┘
-        │                  │                  │
+             │                           │                            │
 ┌───────▼───────┐  ┌───────▼───────┐  ┌───────▼───────┐
-│ Web BFF       │  │ Mobile BFF    │  │ IoT BFF       │
+│          Web BFF       │  │         Mobile BFF    │  │          IoT BFF       │
 └───────┬───────┘  └───────┬───────┘  └───────┬───────┘
-        │                  │                  │
-        └──────────────────┼──────────────────┘
-                           │
-                    ┌──────▼──────┐
-                    │ Domain      │
-                    │ Services    │
-                    └─────────────┘
+            │                            │                            │
+            └──────────────────┼──────────────────┘
+                                          │
+                               ┌──────▼──────┐
+                               │ Domain      │
+                               │ Services    │
+                               └─────────────┘
 ```
 
 Key characteristics:
@@ -1279,19 +1279,19 @@ Integration through distributed data ownership:
 
 ```
 ┌───────────────────────────────────────────────────────────────┐
-│                  DATA GOVERNANCE LAYER                        │
-│  Standards | Policies | Discovery | Quality                   │
+│                                 DATA GOVERNANCE LAYER                                             │
+│         Standards       |       Policies        |        Discovery      |      Quality           │
 └───────────────────────────┬─────────────────────────────────┘
-                            │
-┌───────────────┐  ┌────────┴──────┐  ┌───────────────┐
-│ Domain A      │  │ Domain B      │  │ Domain C      │
-│ Data Product  │  │ Data Product  │  │ Data Product  │
-└───────┬───────┘  └───────┬───────┘  └───────┬───────┘
-        │                  │                  │
-┌───────▼───────┐  ┌───────▼───────┐  ┌───────▼───────┐
-│ Domain A      │  │ Domain B      │  │ Domain C      │
-│ Data Platform │  │ Data Platform │  │ Data Platform │
-└───────────────┘  └───────────────┘  └───────────────┘
+                                            │
+┌───────────────┐   ┌────────┴──────┐    ┌───────────────┐
+│          Domain A      │   │         Domain B      │     │         Domain C      │
+│          Data Product  │   │         Data Product  │     │         Data Product  │
+└───────┬───────┘   └───────┬───────┘    └───────┬───────┘
+             │                            │                             │
+┌───────▼───────┐   ┌───────▼───────┐    ┌───────▼───────┐
+│          Domain A      │   │         Domain B      │    │          Domain C      │
+│          Data Platform │   │         Data Platform │    │          Data Platform │
+└───────────────┘   └───────────────┘    └───────────────┘
 ```
 
 Key characteristics:
@@ -1315,24 +1315,24 @@ The Nexus Framework implements quality gates across the development lifecycle:
 
 ```
 ┌───────────────┐
-│ Development   │
-│ Phase         │
+│          Development   │
+│          Phase         │
 └───────┬───────┘
-        │
+             │
 ┌───────▼───────┐
-│ Quality       │◄──────┐
-│ Gate          │       │
-└───────┬───────┘       │
-        │               │
-        │ Pass?         │
-        │               │
-        ├───No──────────┘
-        │
-        │ Yes
-        ▼
+│          Quality       │◄──────┐
+│          Gate          │          │
+└───────┬───────┘          │
+             │                      │
+             │ Pass?                │
+             │                      │
+             ├───No──────────┘
+             │
+             │ Yes
+             ▼
 ┌───────────────┐
-│ Next          │
-│ Phase         │
+│          Next          │
+│          Phase         │
 └───────────────┘
 ```
 
