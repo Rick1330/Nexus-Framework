@@ -10,28 +10,28 @@ The agent roles are organized in a hierarchical structure with four primary tier
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    STRATEGIC TIER                           │
-│  System Architect | Project Director | Security Guardian    │
+│                                           STRATEGIC TIER                                       │
+│          System Architect      |        Project Director      |     Security Guardian          │
+└───────────────────────────────┬─────────────────────────────┘
+                                                   │
+┌───────────────────────────────▼─────────────────────────────┐
+│                                           TACTICAL TIER                                        │
+│        Domain Architect      |         Algorithm Designer    |       DevOps Engineer           │
+│         UX Architect         |           Data Architect      |       Security Analyst          │
 └───────────────────────────────┬─────────────────────────────┘
                                 │
 ┌───────────────────────────────▼─────────────────────────────┐
-│                    TACTICAL TIER                            │
-│  Domain Architect | Algorithm Designer | DevOps Engineer    │
-│  UX Architect | Data Architect | Security Analyst           │
+│                                           OPERATIONAL TIER                                      │
+│     Frontend Developer       |         Backend Developer      |          ML Engineer            │
+│     Infrastructure Engineer  |         QA Engineer            |          Documentation          │
+│     Mobile Developer         |         Systems Engineer       |          Database Engineer      │
 └───────────────────────────────┬─────────────────────────────┘
                                 │
 ┌───────────────────────────────▼─────────────────────────────┐
-│                  OPERATIONAL TIER                           │
-│  Frontend Developer | Backend Developer | ML Engineer       │
-│  Infrastructure Engineer | QA Engineer | Documentation      │
-│  Mobile Developer | Systems Engineer | Database Engineer    │
-└───────────────────────────────┬─────────────────────────────┘
-                                │
-┌───────────────────────────────▼─────────────────────────────┐
-│                   SPECIALIST TIER                           │
-│  Performance Optimizer | Accessibility Expert | Localization│
-│  Compliance Specialist | Animation Engineer | API Designer  │
-│  Testing Specialist | UI Component Engineer | DB Optimizer  │
+│                                           SPECIALIST TIER                                       │
+│     Performance Optimizer   |        Accessibility Expert     |          Localization           │
+│     Compliance Specialist   |        Animation Engineer       |           API Designer          │
+│     Testing Specialist      |        UI Component Engineer    |          DB Optimizer           │
 └─────────────────────────────────────────────────────────────┘
 ```
 
