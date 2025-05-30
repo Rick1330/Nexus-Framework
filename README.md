@@ -61,4 +61,4 @@ Created and maintained by [Rick1330](https://github.com/Rick1330).
 
 ---
 
-© 2025 Rick1330. All Rights Reserved.
+© 2025 Rick(Elshaday Mengesha). All Rights Reserved.
