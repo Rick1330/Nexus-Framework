@@ -1,0 +1,70 @@
+[tool.poetry]
+name = "nexus-framework"
+version = "2.0.0"
+description = "A world-class, modular, scalable multi-agent engineering mega-system"
+authors = ["Rick1330 <elishum8@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/Rick1330/Nexus-Framework-The-Next-Generation-Multi-Agent-Engineering-System"
+documentation = "https://github.com/Rick1330/Nexus-Framework-The-Next-Generation-Multi-Agent-Engineering-System/docs"
+keywords = ["ai", "agents", "multi-agent", "engineering", "automation"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+langchain = "^0.1.0"
+langgraph = "^0.0.20"
+crewai = "^0.28.0"
+memgpt = "^0.3.2"
+letta = "^0.1.0"
+chromadb = "^0.4.22"
+sqlmodel = "^0.0.8"
+redis = "^5.0.1"
+prometheus-client = "^0.17.1"
+fastapi = "^0.104.1"
+uvicorn = "^0.24.0"
+pydantic = "^2.5.2"
+loguru = "^0.7.2"
+opentelemetry-api = "^1.21.0"
+opentelemetry-sdk = "^1.21.0"
+opentelemetry-exporter-jaeger = "^1.21.0"
+pyyaml = "^6.0.1"
+typer = "^0.9.0"
+rich = "^13.6.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+black = "^23.11.0"
+isort = "^5.12.0"
+mypy = "^1.7.1"
+flake8 = "^6.1.0"
+pre-commit = "^3.5.0"
+pytest-cov = "^4.1.0"
+bandit = "^1.7.5"
+safety = "^2.3.5"
+sphinx = "^7.2.6"
+sphinx-rtd-theme = "^1.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ["py39"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_functions = "test_*"
+python_classes = "Test*"
