@@ -14,33 +14,33 @@ The orchestration system is structured as a layered architecture with distinct c
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                  ORCHESTRATION CONTROL PLANE                    │
-│  Strategic Planning | Resource Governance | System Monitoring   │
+│                                    ORCHESTRATION CONTROL PLANE                                        │
+│          Strategic Planning       |       Resource Governance      |        System Monitoring         │
 └───────────────────────────────┬─────────────────────────────────┘
-                                │
+                                                   │
 ┌───────────────────────────────▼─────────────────────────────────┐
-│                  WORKFLOW DEFINITION LAYER                      │
-│  Workflow Templates | Process Models | Decision Rules           │
+│                                     WORKFLOW DEFINITION LAYER                                         │
+│          Workflow Templates      |         Process Models         |          Decision Rules           │
 └───────────────────────────────┬─────────────────────────────────┘
-                                │
+                                                   │
 ┌───────────────────────────────▼─────────────────────────────────┐
-│                  WORKFLOW EXECUTION ENGINE                      │
-│  Task Scheduler | Dependency Resolver | State Manager           │
+│                                       WORKFLOW EXECUTION ENGINE                                       │
+│          Task Scheduler          |        Dependency Resolver     |           State Manager           │
 └───────────────────────────────┬─────────────────────────────────┘
-                                │
+                                                   │
 ┌───────────────────────────────▼─────────────────────────────────┐
-│                  AGENT COORDINATION LAYER                       │
-│  Agent Selection | Task Assignment | Result Aggregation         │
+│                                      AGENT COORDINATION LAYER                                         │
+│          Agent Selection        |          Task Assignment        |        Result Aggregation         │
 └───────────────────────────────┬─────────────────────────────────┘
-                                │
+                                                   │
 ┌───────────────────────────────▼─────────────────────────────────┐
-│                  EVENT PROCESSING SYSTEM                        │
-│  Event Routing | Event Correlation | Event Transformation       │
+│                                       EVENT PROCESSING SYSTEM                                         │
+│          Event Routing          |       Event Correlation        |         Event Transformation       │
 └───────────────────────────────┬─────────────────────────────────┘
-                                │
+                                                   │
 ┌───────────────────────────────▼─────────────────────────────────┐
-│                  MONITORING AND ADAPTATION                      │
-│  Performance Tracking | Anomaly Detection | Dynamic Adjustment  │
+│                                      MONITORING AND ADAPTATION                                        │
+│         Performance Tracking    |          Anomaly Detection    |           Dynamic Adjustment        │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -500,33 +500,33 @@ The fallback mechanisms in the Nexus Framework are organized in a layered archit
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                  STRATEGIC FALLBACK LAYER                       │
-│  Human Intervention | Project Reprioritization | Goal Revision  │
+│                                      STRATEGIC FALLBACK LAYER                                         │
+│        Human Intervention       |       Project Reprioritization      |      Goal Revision            │
 └───────────────────────────────┬─────────────────────────────────┘
-                                │
+                                                   │
 ┌───────────────────────────────▼─────────────────────────────────┐
-│                  WORKFLOW FALLBACK LAYER                        │
-│  Alternative Workflows | Stage Skipping | Workflow Substitution │
+│                                     WORKFLOW FALLBACK LAYER                                           │
+│        Alternative Workflows    |          Stage Skipping            |       Workflow Substitution    │
 └───────────────────────────────┬─────────────────────────────────┘
-                                │
+                                                   │
 ┌───────────────────────────────▼─────────────────────────────────┐
-│                  TASK FALLBACK LAYER                            │
-│  Task Retry | Alternative Tasks | Task Decomposition            │
+│                                        TASK FALLBACK LAYER                                            │
+│            Task Retry          |          Alternative Tasks          |       Task Decomposition       │
 └───────────────────────────────┬─────────────────────────────────┘
-                                │
+                                                   │
 ┌───────────────────────────────▼─────────────────────────────────┐
-│                  AGENT FALLBACK LAYER                           │
-│  Agent Substitution | Agent Restart | Multi-Agent Consensus     │
+│                                        AGENT FALLBACK LAYER                                           │
+│         Agent Substitution     |          Agent Restart             |       Multi-Agent Consensus     │
 └───────────────────────────────┬─────────────────────────────────┘
-                                │
+                                                   │
 ┌───────────────────────────────▼─────────────────────────────────┐
-│                  RESOURCE FALLBACK LAYER                        │
-│  Resource Reallocation | Degraded Operation | Prioritization    │
+│                                      RESOURCE FALLBACK LAYER                                          │
+│        Resource Reallocation   |       Degraded Operation           |        Prioritization           │
 └───────────────────────────────┬─────────────────────────────────┘
-                                │
+                                                   │
 ┌───────────────────────────────▼─────────────────────────────────┐
-│                  TECHNICAL FALLBACK LAYER                       │
-│  Circuit Breakers | Timeout Handling | Error Recovery           │
+│                                    TECHNICAL FALLBACK LAYER                                           │
+│        Circuit Breakers       |          Timeout Handling          |         Error Recovery           │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -653,50 +653,50 @@ The Nexus Framework implements a progressive fallback pattern that attempts incr
 
 ```
 ┌───────────────┐
-│ Normal        │
-│ Execution     │
+│          Normal        │
+│          Execution     │
 └───────┬───────┘
-        │
-        │ Failure
-        ▼
+             │
+             │ Failure
+             ▼
 ┌───────────────┐
-│ Retry         │──────┐
-│ Same Approach │      │
-└───────┬───────┘      │ Success
-        │              │
-        │ Failure      │
-        ▼              │
-┌───────────────┐      │
-│ Alternative   │      │
-│ Approach      │──────┤
-└───────┬───────┘      │
-        │              │
-        │ Failure      │
-        ▼              │
-┌───────────────┐      │
-│ Simplified    │      │
-│ Approach      │──────┤
-└───────┬───────┘      │
-        │              │
-        │ Failure      │
-        ▼              │
-┌───────────────┐      │
-│ Agent         │      │
-│ Substitution  │──────┤
-└───────┬───────┘      │
-        │              │
-        │ Failure      │
-        ▼              │
-┌───────────────┐      │
-│ Workflow      │      │
-│ Modification  │──────┤
-└───────┬───────┘      │
-        │              │
-        │ Failure      │
-        ▼              │
-┌───────────────┐      │
-│ Human         │      │
-│ Intervention  │──────┘
+│          Retry         │──────┐
+│          Same Approach │          │
+└───────┬───────┘          │ Success
+             │                      │
+             │ Failure              │
+             ▼                      │
+┌───────────────┐          │
+│          Alternative   │          │
+│          Approach      │──────┤
+└───────┬───────┘          │
+             │                      │
+             │ Failure              │
+             ▼                      │
+┌───────────────┐          │
+│          Simplified    │          │
+│          Approach      │──────┤
+└───────┬───────┘          │
+             │                      │
+             │ Failure              │
+             ▼                      │
+┌───────────────┐         │
+│          Agent         │         │
+│          Substitution  │──────┤
+└───────┬───────┘          │
+             │                      │
+             │ Failure              │
+             ▼                      │
+┌───────────────┐          │
+│          Workflow      │          │
+│          Modification  │──────┤
+└───────┬───────┘          │
+             │                      │
+             │ Failure              │
+             ▼                      │
+┌───────────────┐          │
+│          Human         │          │
+│          Intervention  │──────┘
 └───────────────┘
 ```
 
@@ -785,17 +785,17 @@ The Nexus Framework implements hierarchical orchestration for complex workflows:
 
 ```
 ┌───────────────────────────────────────────────────────────────┐
-│                  Strategic Orchestrator                       │
-│  (Project-level coordination and strategic decisions)         │
+│                               Strategic Orchestrator                                               │
+│                   (Project-level coordination and strategic decisions)                             │
 └───────────────────────────┬───────────────────────────────────┘
-                            │
-            ┌───────────────┼───────────────┐
-            │               │               │
+                                            │
+                   ┌───────────────┼───────────────┐
+                   │                       │                         │
 ┌───────────▼───────┐ ┌─────▼─────────┐ ┌───▼───────────────┐
-│ Domain            │ │ Domain        │ │ Domain            │
-│ Orchestrator A    │ │ Orchestrator B│ │ Orchestrator C    │
-│ (Domain-specific  │ │ (Domain-      │ │ (Domain-specific  │
-│  coordination)    │ │  specific     │ │  coordination)    │
+│            Domain            │ │ Domain        │ │ Domain            │
+│            Orchestrator A    │ │ Orchestrator B│ │ Orchestrator C    │
+│            (Domain-specific  │ │ (Domain-      │ │ (Domain-specific  │
+│             coordination)    │ │  specific     │ │  coordination)    │
 └───────────┬───────┘ │  coordination)│ └───────────┬───────┘
             │         └─────┬─────────┘             │
     ┌───────┴──────┐        │           ┌───────────┴───────┐
