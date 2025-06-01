@@ -1470,7 +1470,7 @@ curl -X POST \
 ## Notes
 
 [Additional information, caveats, or important notes about the endpoint]
-```
+
 
 ## 8. Collaboration Workflows
 
