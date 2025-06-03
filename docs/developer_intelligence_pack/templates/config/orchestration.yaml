@@ -1,0 +1,218 @@
+# Orchestration Configuration
+
+This configuration file defines the settings for the orchestration system in the Nexus Framework.
+
+# Orchestrator
+orchestrator:
+  enabled: true
+  type: strategic  # Options: strategic, tactical, hybrid
+  max_concurrent_workflows: 10
+  max_workflow_duration_seconds: 3600  # 1 hour
+  workflow_timeout_seconds: 600  # 10 minutes
+  task_timeout_seconds: 60  # 1 minute
+  
+  # Strategic orchestrator settings
+  strategic:
+    planning_model: gpt-4o
+    planning_temperature: 0.2
+    max_planning_tokens: 4096
+    planning_timeout_seconds: 30
+    replanning_threshold: 0.7  # Confidence threshold for replanning
+  
+  # Tactical orchestrator settings
+  tactical:
+    execution_model: gpt-4o
+    execution_temperature: 0.1
+    max_execution_tokens: 2048
+    execution_timeout_seconds: 20
+    max_retry_attempts: 3
+
+# Workflow Engine
+workflow_engine:
+  enabled: true
+  type: langgraph  # Options: langgraph, custom, temporal
+  
+  # LangGraph settings
+  langgraph:
+    checkpoint_frequency: 5  # Checkpoint after every 5 steps
+    state_serialization: json  # Options: json, pickle
+    debug_mode: false
+    tracing: true
+  
+  # Custom engine settings
+  custom:
+    state_persistence: true
+    state_backend: redis  # Options: redis, database, memory
+    parallel_execution: true
+    max_parallel_tasks: 5
+  
+  # Temporal settings
+  temporal:
+    server_url: localhost:7233
+    namespace: nexus
+    task_queue: nexus-workflows
+    worker_count: 5
+
+# Workflow Definitions
+workflows:
+  path: workflows/
+  auto_discovery: true
+  default_timeout_seconds: 600
+  default_retry_policy:
+    max_attempts: 3
+    initial_backoff_seconds: 1
+    max_backoff_seconds: 60
+    backoff_factor: 2
+  
+  # Built-in workflow templates
+  templates:
+    - name: backend_development
+      description: "End-to-end backend development workflow"
+      path: workflows/templates/backend_development.yaml
+      enabled: true
+    
+    - name: frontend_development
+      description: "End-to-end frontend development workflow"
+      path: workflows/templates/frontend_development.yaml
+      enabled: true
+    
+    - name: fullstack_development
+      description: "End-to-end fullstack development workflow"
+      path: workflows/templates/fullstack_development.yaml
+      enabled: true
+    
+    - name: code_review
+      description: "Comprehensive code review workflow"
+      path: workflows/templates/code_review.yaml
+      enabled: true
+    
+    - name: research
+      description: "Research and analysis workflow"
+      path: workflows/templates/research.yaml
+      enabled: true
+
+# Task Scheduling
+task_scheduler:
+  enabled: true
+  strategy: priority  # Options: priority, fifo, fair_share
+  queue_backend: redis  # Options: redis, database, memory
+  
+  # Priority scheduler settings
+  priority:
+    levels: 5  # Number of priority levels
+    preemption: true  # Allow high-priority tasks to preempt lower-priority tasks
+    aging_factor: 1.1  # Factor to increase priority of waiting tasks
+    max_wait_time_seconds: 300  # Maximum wait time before priority boost
+  
+  # Fair share scheduler settings
+  fair_share:
+    allocation_strategy: equal  # Options: equal, weighted
+    min_allocation_percentage: 10  # Minimum allocation for any agent
+    rebalance_interval_seconds: 60  # How often to rebalance allocations
+
+# Agent Coordination
+agent_coordination:
+  enabled: true
+  strategy: centralized  # Options: centralized, decentralized, hybrid
+  
+  # Centralized coordination settings
+  centralized:
+    coordinator_agent: "OrchestratorAgent"
+    decision_model: gpt-4o
+    decision_temperature: 0.1
+    max_decision_tokens: 2048
+    decision_timeout_seconds: 20
+  
+  # Decentralized coordination settings
+  decentralized:
+    negotiation_protocol: contract_net  # Options: contract_net, auction, voting
+    max_negotiation_rounds: 3
+    negotiation_timeout_seconds: 30
+    consensus_threshold: 0.7  # Percentage of agents that must agree
+  
+  # Hybrid coordination settings
+  hybrid:
+    local_autonomy_threshold: 0.8  # Confidence threshold for local decisions
+    escalation_policy: timeout  # Options: timeout, uncertainty, complexity
+
+# Execution Tracking
+execution_tracking:
+  enabled: true
+  persistence: true
+  persistence_backend: database  # Options: database, files, memory
+  history_retention_days: 30
+  detailed_logging: true
+  
+  # Visualization settings
+  visualization:
+    enabled: true
+    update_interval_seconds: 5
+    max_displayed_workflows: 10
+    max_displayed_tasks: 50
+
+# Error Handling
+error_handling:
+  strategy: retry_then_fallback  # Options: retry, fallback, retry_then_fallback, abort
+  max_retry_attempts: 3
+  retry_backoff_factor: 2
+  initial_retry_delay_seconds: 1
+  max_retry_delay_seconds: 60
+  
+  # Fallback settings
+  fallback:
+    enabled: true
+    fallback_agent: "ErrorHandlingAgent"
+    max_fallback_attempts: 2
+    fallback_timeout_seconds: 30
+  
+  # Error classification settings
+  classification:
+    enabled: true
+    classifier_model: gpt-4o
+    classifier_temperature: 0.1
+    max_classifier_tokens: 1024
+    classifier_timeout_seconds: 10
+
+# Performance Optimization
+performance:
+  caching:
+    enabled: true
+    cache_backend: redis  # Options: redis, memory
+    ttl_seconds: 3600  # 1 hour
+    max_cache_size_mb: 1024
+  
+  batching:
+    enabled: true
+    max_batch_size: 10
+    max_batch_wait_time_ms: 100
+  
+  parallelization:
+    enabled: true
+    max_parallel_workflows: 10
+    max_parallel_tasks_per_workflow: 5
+    thread_pool_size: 20
+
+# Observability
+observability:
+  metrics:
+    enabled: true
+    collection_interval_seconds: 15
+    retention_days: 30
+    export_prometheus: true
+  
+  tracing:
+    enabled: true
+    sampling_rate: 1.0  # Sample all traces
+    span_processor: batch  # Options: batch, simple
+    batch_export_interval_seconds: 5
+  
+  logging:
+    level: info  # Options: debug, info, warning, error, critical
+    format: json  # Options: json, text
+    include_trace_id: true
+    sensitive_data_masking: true
+  
+  dashboards:
+    enabled: true
+    update_interval_seconds: 10
+    default_time_range_minutes: 60

@@ -1,0 +1,235 @@
+# Agent Configuration
+
+This configuration file defines the settings for domain-specific agents in the Nexus Framework.
+
+# Backend Development Agent
+backend_agent:
+  enabled: true
+  name: "BackendDevelopmentAgent"
+  description: "Specializes in backend development tasks including API design, database modeling, and server-side logic"
+  capabilities:
+    - api_design
+    - database_modeling
+    - server_logic
+    - authentication
+    - performance_optimization
+  llm:
+    provider: openai
+    model: gpt-4o
+    temperature: 0.2
+    max_tokens: 4096
+  tools:
+    - code_generation
+    - code_review
+    - database_schema
+    - api_testing
+    - documentation
+  memory:
+    context_window_size: 16384
+    long_term_memory: true
+    knowledge_base: "backend_development"
+  timeout_seconds: 60
+  max_iterations: 10
+  priority: 1
+
+# Frontend Development Agent
+frontend_agent:
+  enabled: true
+  name: "FrontendDevelopmentAgent"
+  description: "Specializes in frontend development tasks including UI/UX implementation, component design, and client-side logic"
+  capabilities:
+    - ui_implementation
+    - component_design
+    - client_logic
+    - responsive_design
+    - accessibility
+  llm:
+    provider: openai
+    model: gpt-4o
+    temperature: 0.3
+    max_tokens: 4096
+  tools:
+    - code_generation
+    - code_review
+    - ui_testing
+    - component_library
+    - documentation
+  memory:
+    context_window_size: 16384
+    long_term_memory: true
+    knowledge_base: "frontend_development"
+  timeout_seconds: 60
+  max_iterations: 10
+  priority: 1
+
+# DevOps Agent
+devops_agent:
+  enabled: true
+  name: "DevOpsAgent"
+  description: "Specializes in infrastructure, deployment, CI/CD, and operational tasks"
+  capabilities:
+    - infrastructure_as_code
+    - ci_cd_pipeline
+    - container_orchestration
+    - monitoring
+    - security
+  llm:
+    provider: openai
+    model: gpt-4o
+    temperature: 0.1
+    max_tokens: 4096
+  tools:
+    - terraform
+    - docker
+    - kubernetes
+    - github_actions
+    - monitoring
+  memory:
+    context_window_size: 16384
+    long_term_memory: true
+    knowledge_base: "devops"
+  timeout_seconds: 120
+  max_iterations: 15
+  priority: 2
+
+# Data Engineering Agent
+data_agent:
+  enabled: true
+  name: "DataEngineeringAgent"
+  description: "Specializes in data processing, analysis, visualization, and database optimization"
+  capabilities:
+    - data_processing
+    - data_analysis
+    - data_visualization
+    - database_optimization
+    - etl_pipeline
+  llm:
+    provider: openai
+    model: gpt-4o
+    temperature: 0.2
+    max_tokens: 4096
+  tools:
+    - data_processing
+    - data_analysis
+    - data_visualization
+    - database_tools
+    - documentation
+  memory:
+    context_window_size: 16384
+    long_term_memory: true
+    knowledge_base: "data_engineering"
+  timeout_seconds: 120
+  max_iterations: 15
+  priority: 2
+
+# Testing Agent
+testing_agent:
+  enabled: true
+  name: "TestingAgent"
+  description: "Specializes in test planning, implementation, and execution across different testing types"
+  capabilities:
+    - unit_testing
+    - integration_testing
+    - e2e_testing
+    - performance_testing
+    - security_testing
+  llm:
+    provider: openai
+    model: gpt-4o
+    temperature: 0.1
+    max_tokens: 4096
+  tools:
+    - test_generation
+    - test_execution
+    - test_reporting
+    - coverage_analysis
+    - documentation
+  memory:
+    context_window_size: 16384
+    long_term_memory: true
+    knowledge_base: "testing"
+  timeout_seconds: 60
+  max_iterations: 10
+  priority: 2
+
+# Research Agent
+research_agent:
+  enabled: true
+  name: "ResearchAgent"
+  description: "Specializes in information gathering, analysis, and synthesis for decision support"
+  capabilities:
+    - information_gathering
+    - literature_review
+    - trend_analysis
+    - competitive_analysis
+    - technology_evaluation
+  llm:
+    provider: anthropic
+    model: claude-3-opus
+    temperature: 0.3
+    max_tokens: 8192
+  tools:
+    - web_search
+    - document_analysis
+    - data_visualization
+    - report_generation
+    - documentation
+  memory:
+    context_window_size: 32768
+    long_term_memory: true
+    knowledge_base: "research"
+  timeout_seconds: 180
+  max_iterations: 20
+  priority: 3
+
+# MetaGPT Integration Agents
+metagpt_agents:
+  enabled: true
+  roles:
+    product_manager:
+      enabled: true
+      name: "ProductManagerAgent"
+      description: "Defines product requirements and coordinates development efforts"
+      llm:
+        provider: openai
+        model: gpt-4o
+        temperature: 0.2
+        max_tokens: 4096
+      priority: 1
+    
+    architect:
+      enabled: true
+      name: "ArchitectAgent"
+      description: "Designs system architecture and technical specifications"
+      llm:
+        provider: openai
+        model: gpt-4o
+        temperature: 0.1
+        max_tokens: 4096
+      priority: 1
+    
+    engineer:
+      enabled: true
+      name: "EngineerAgent"
+      description: "Implements code based on specifications and requirements"
+      llm:
+        provider: openai
+        model: gpt-4o
+        temperature: 0.2
+        max_tokens: 4096
+      priority: 2
+    
+    designer:
+      enabled: true
+      name: "DesignerAgent"
+      description: "Creates UI/UX designs and visual assets"
+      llm:
+        provider: openai
+        model: gpt-4o
+        temperature: 0.4
+        max_tokens: 4096
+      priority: 2
+  
+  workspace_dir: "/tmp/metagpt_workspace"
+  max_iterations: 10
+  timeout_seconds: 600

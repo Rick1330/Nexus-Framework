@@ -1,0 +1,168 @@
+# System Configuration
+
+This configuration file defines the core system settings for the Nexus Framework.
+
+# Environment
+environment: development  # Options: development, staging, production
+
+# Logging
+logging:
+  level: debug  # Options: debug, info, warning, error, critical
+  format: json  # Options: json, text
+  output: stdout  # Options: stdout, file
+  file_path: logs/nexus.log  # Only used if output is file
+
+# API
+api:
+  host: 0.0.0.0
+  port: 8000
+  debug: true
+  cors_origins:
+    - http://localhost:3000
+    - http://localhost:8080
+  rate_limit:
+    enabled: true
+    requests_per_minute: 100
+
+# Database
+database:
+  type: postgresql  # Options: postgresql, sqlite
+  host: localhost
+  port: 5432
+  name: nexus
+  user: nexusdev
+  password: ${NEXUS_DB_PASSWORD}  # Use environment variable
+  pool_size: 10
+  max_overflow: 20
+  ssl_mode: disable  # Options: disable, require, verify-ca, verify-full
+
+# Redis
+redis:
+  host: localhost
+  port: 6379
+  db: 0
+  password: ${NEXUS_REDIS_PASSWORD}  # Use environment variable
+  ssl: false
+
+# Vector Database
+vector_db:
+  type: chroma  # Options: chroma, qdrant, weaviate, milvus
+  host: localhost
+  port: 8000
+  collection: nexus
+  dimensions: 1536  # OpenAI embedding dimensions
+
+# LLM Providers
+llm:
+  default_provider: openai  # Options: openai, anthropic, azure_openai
+  providers:
+    openai:
+      api_key: ${NEXUS_OPENAI_API_KEY}
+      organization_id: ${NEXUS_OPENAI_ORG_ID}
+      default_model: gpt-4o
+      timeout_seconds: 60
+      max_retries: 3
+    anthropic:
+      api_key: ${NEXUS_ANTHROPIC_API_KEY}
+      default_model: claude-3-opus
+      timeout_seconds: 60
+      max_retries: 3
+    azure_openai:
+      api_key: ${NEXUS_AZURE_OPENAI_API_KEY}
+      endpoint: ${NEXUS_AZURE_OPENAI_ENDPOINT}
+      api_version: 2023-05-15
+      default_deployment: gpt-4
+      timeout_seconds: 60
+      max_retries: 3
+
+# Memory
+memory:
+  default_ttl_seconds: 86400  # 24 hours
+  max_context_window: 16384
+  embedding_model: text-embedding-3-large
+  chunk_size: 1000
+  chunk_overlap: 200
+  cache:
+    enabled: true
+    ttl_seconds: 3600  # 1 hour
+
+# Orchestration
+orchestration:
+  max_concurrent_workflows: 10
+  max_workflow_duration_seconds: 3600  # 1 hour
+  workflow_timeout_seconds: 600  # 10 minutes
+  task_timeout_seconds: 60  # 1 minute
+  retry:
+    max_attempts: 3
+    initial_backoff_seconds: 1
+    max_backoff_seconds: 60
+    backoff_factor: 2
+
+# Agents
+agents:
+  default_timeout_seconds: 30
+  max_consecutive_errors: 3
+  error_threshold_percentage: 10
+  capabilities_refresh_interval_seconds: 3600  # 1 hour
+
+# Security
+security:
+  auth:
+    enabled: true
+    jwt_secret: ${NEXUS_JWT_SECRET}
+    token_expiry_seconds: 86400  # 24 hours
+    refresh_token_expiry_seconds: 604800  # 7 days
+  cors:
+    enabled: true
+    allowed_origins:
+      - http://localhost:3000
+      - https://nexus-dashboard.example.com
+  rate_limiting:
+    enabled: true
+    default_rate: 100  # requests per minute
+    burst: 20
+
+# Observability
+observability:
+  metrics:
+    enabled: true
+    export_interval_seconds: 15
+    prometheus_endpoint: /metrics
+  tracing:
+    enabled: true
+    exporter: otlp  # Options: otlp, jaeger, zipkin
+    endpoint: http://localhost:4317
+    service_name: nexus
+  logging:
+    level: info  # Options: debug, info, warning, error, critical
+    format: json  # Options: json, text
+    include_trace_id: true
+
+# MetaGPT Integration
+metagpt:
+  enabled: true
+  roles:
+    - product_manager
+    - architect
+    - engineer
+    - designer
+  workspace_dir: /tmp/metagpt_workspace
+  max_iterations: 10
+  timeout_seconds: 600  # 10 minutes
+
+# Extensions
+extensions:
+  enabled: true
+  auto_discover: true
+  paths:
+    - extensions/
+    - ${NEXUS_EXTENSIONS_PATH}
+  disabled:
+    - example_extension
+
+# Development
+development:
+  hot_reload: true
+  debug_tools: true
+  mock_services: false
+  profile_endpoints: true

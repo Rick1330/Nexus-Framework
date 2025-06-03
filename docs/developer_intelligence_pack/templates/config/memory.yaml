@@ -1,0 +1,225 @@
+# Memory Configuration
+
+This configuration file defines the settings for the memory system in the Nexus Framework.
+
+# Memory Manager
+memory_manager:
+  enabled: true
+  default_ttl_seconds: 86400  # 24 hours
+  max_context_window: 16384
+  cache:
+    enabled: true
+    type: redis  # Options: redis, in-memory
+    ttl_seconds: 3600  # 1 hour
+  
+# Vector Storage
+vector_storage:
+  provider: chroma  # Options: chroma, faiss, qdrant, weaviate, milvus
+  collection_prefix: "nexus_"
+  dimensions: 1536  # OpenAI embedding dimensions
+  distance_metric: cosine  # Options: cosine, euclidean, dot
+  
+  # Provider-specific configurations
+  chroma:
+    host: localhost
+    port: 8000
+    persistent: true
+    path: data/chroma
+  
+  faiss:
+    index_type: IndexFlatL2
+    path: data/faiss
+  
+  qdrant:
+    host: localhost
+    port: 6333
+    grpc_port: 6334
+    prefer_grpc: true
+    timeout: 10.0
+  
+  weaviate:
+    host: localhost
+    port: 8080
+    batch_size: 100
+    timeout: 10.0
+  
+  milvus:
+    host: localhost
+    port: 19530
+    timeout: 10.0
+
+# Embedding Models
+embeddings:
+  default_model: openai  # Options: openai, huggingface, sentence_transformers
+  
+  # Provider-specific configurations
+  openai:
+    model_name: text-embedding-3-large
+    dimensions: 1536
+    batch_size: 100
+    timeout: 60
+  
+  huggingface:
+    model_name: BAAI/bge-large-en-v1.5
+    dimensions: 1024
+    device: cuda  # Options: cpu, cuda
+    batch_size: 32
+  
+  sentence_transformers:
+    model_name: all-MiniLM-L6-v2
+    dimensions: 384
+    device: cpu  # Options: cpu, cuda
+    batch_size: 32
+
+# Memory Types
+memory_types:
+  working_memory:
+    enabled: true
+    ttl_seconds: 3600  # 1 hour
+    max_items: 1000
+    priority_strategy: recency  # Options: recency, importance, combined
+  
+  episodic_memory:
+    enabled: true
+    ttl_seconds: 604800  # 7 days
+    max_items: 10000
+    retrieval_strategy: semantic  # Options: semantic, temporal, combined
+  
+  semantic_memory:
+    enabled: true
+    ttl_seconds: null  # No expiration
+    max_items: null  # No limit
+    retrieval_strategy: semantic  # Options: semantic, keyword, combined
+  
+  procedural_memory:
+    enabled: true
+    ttl_seconds: null  # No expiration
+    max_items: 5000
+    retrieval_strategy: semantic  # Options: semantic, categorical, combined
+
+# Retrieval Strategies
+retrieval:
+  default_strategy: hybrid  # Options: vector, keyword, hybrid
+  max_results: 10
+  relevance_threshold: 0.7
+  
+  vector:
+    enabled: true
+    weight: 0.7
+    top_k: 20
+  
+  keyword:
+    enabled: true
+    weight: 0.3
+    algorithm: bm25  # Options: bm25, tfidf
+    top_k: 20
+  
+  hybrid:
+    reranking: true
+    reranking_model: cross-encoder/ms-marco-MiniLM-L-6-v2
+    diversity_factor: 0.3
+
+# Context Window Management
+context_window:
+  strategy: dynamic  # Options: fixed, dynamic, adaptive
+  default_size: 8192
+  max_size: 16384
+  token_counting_model: cl100k_base  # OpenAI's tokenizer
+  
+  # Strategy-specific configurations
+  fixed:
+    window_size: 8192
+  
+  dynamic:
+    min_size: 4096
+    max_size: 16384
+    expansion_factor: 1.5
+  
+  adaptive:
+    initial_size: 4096
+    max_size: 16384
+    importance_threshold: 0.6
+    recency_weight: 0.7
+    relevance_weight: 0.3
+
+# Memory Persistence
+persistence:
+  enabled: true
+  strategy: hybrid  # Options: database, files, hybrid
+  
+  database:
+    enabled: true
+    type: postgresql  # Options: postgresql, sqlite, mongodb
+    table_prefix: "memory_"
+    batch_size: 100
+    vacuum_frequency_hours: 24
+  
+  files:
+    enabled: true
+    format: json  # Options: json, pickle, parquet
+    path: data/memory
+    compression: true
+    backup_frequency_hours: 24
+    max_backups: 7
+
+# Memory Operations
+operations:
+  chunking:
+    enabled: true
+    strategy: recursive  # Options: fixed, recursive, semantic
+    chunk_size: 1000
+    chunk_overlap: 200
+    
+    # Strategy-specific configurations
+    fixed:
+      chunk_size: 1000
+      chunk_overlap: 200
+    
+    recursive:
+      min_chunk_size: 500
+      max_chunk_size: 1500
+      chunk_overlap: 200
+      separators: ["\n\n", "\n", ". ", " ", ""]
+    
+    semantic:
+      min_chunk_size: 500
+      max_chunk_size: 1500
+      chunk_overlap: 200
+      model: sentence-transformers/all-MiniLM-L6-v2
+  
+  summarization:
+    enabled: true
+    strategy: recursive  # Options: direct, recursive, map_reduce
+    max_input_tokens: 12000
+    target_output_tokens: 1000
+    
+    # Strategy-specific configurations
+    direct:
+      prompt_template: "Summarize the following text:\n\n{text}\n\nSummary:"
+    
+    recursive:
+      chunk_size: 4000
+      chunk_overlap: 500
+      prompt_template: "Summarize the following text:\n\n{text}\n\nSummary:"
+    
+    map_reduce:
+      chunk_size: 4000
+      chunk_overlap: 0
+      map_prompt_template: "Summarize the following text:\n\n{text}\n\nSummary:"
+      reduce_prompt_template: "Combine the following summaries into a single coherent summary:\n\n{summaries}\n\nFinal summary:"
+
+# Memory Analytics
+analytics:
+  enabled: true
+  tracking:
+    usage: true
+    performance: true
+    retrieval_quality: true
+  
+  metrics:
+    collection_interval_seconds: 60
+    retention_days: 30
+  
+  dashboards:
+    enabled: true
+    update_interval_seconds: 300
