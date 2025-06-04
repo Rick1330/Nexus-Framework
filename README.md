@@ -1,6 +1,6 @@
-# Nexus Framework v2.0
+# Nexus Framework v2.3
 
-![Version](https://img.shields.io/badge/version-2.0-blue.svg)
+![Version](https://img.shields.io/badge/version-2.3-blue.svg)
 ![Status](https://img.shields.io/badge/status-stable-green.svg)
 ![License](https://img.shields.io/badge/license-MIT-yellow.svg)
 
@@ -8,7 +8,7 @@ A world-class, modular, scalable multi-agent engineering mega-system capable of 
 
 ## Overview
 
-Nexus Framework v2.0 represents a significant evolution from its predecessor, integrating cutting-edge open-source agent frameworks with sophisticated orchestration, memory management, and observability capabilities to enable unprecedented levels of automation and collaboration in engineering workflows.
+Nexus Framework v2.3 represents a significant evolution from its predecessor, integrating cutting-edge open-source agent frameworks with sophisticated orchestration, memory management, and observability capabilities to enable unprecedented levels of automation and collaboration in engineering workflows.
 
 The framework is a comprehensive, future-proof multi-agent engineering system designed to emulate the internal operations and coordination quality of top-tier engineering organizations like Google, Meta, OpenAI, and Palantir.
 
@@ -45,7 +45,7 @@ See the [Installation, Extension, and Contribution Guide](docs/install_extend_co
 
 - **v1.0** - Initial framework design and architecture
 - **v1.1** - Elevated, optimized framework with comprehensive documentation
-- **v2.0** - Complete redesign with modular architecture, advanced memory management, and open-source integration (current)
+- **v2.3** - Complete redesign with modular architecture, advanced memory management, and open-source integration (current)
 
 ## License
 
