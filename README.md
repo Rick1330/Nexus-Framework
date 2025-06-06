@@ -16,6 +16,15 @@
   Design, build, test, and deploy complex full-stack, AI, and DevOps projects through orchestrated agents
 </p>
 
+<div align="center">
+  <a href="#-quick-start">Quick Start</a> •
+  <a href="#-key-features">Features</a> •
+  <a href="#-documentation">Docs</a> •
+  <a href="#-architecture">Architecture</a> •
+  <a href="#-roadmap">Roadmap</a> •
+  <a href="#-contributing">Contributing</a>
+</div>
+
 <hr>
 
 ## 🌟 Overview
@@ -100,75 +109,7 @@ This framework is designed from the ground up with modularity, scalability, and 
   </tr>
 </table>
 
-## 📚 Documentation
-
-Nexus Framework v2.3 includes comprehensive documentation organized into a clean, modular hierarchy:
-
-### [System Overview](/docs/index.md)
-
-- [**Architecture Overview**](/docs/architecture/overview.md) - High-level architectural vision and principles
-- [**Technical Blueprint**](/docs/architecture/technical_blueprint.md) - Detailed technical blueprint and system design
-- [**Agent Layers**](/docs/architecture/agent_layers.md) - Agent layers and communication flows
-- [**Strategic System Summary**](/docs/strategic_system_summary.md) - High-level overview and roadmap
-
-### [Core Components](/docs/core/index.md)
-
-- [**Agents**](/docs/core/agents/index.md) - Agent specialization framework and roles
-- [**Orchestration**](/docs/core/orchestration/workflow_engine.md) - Workflow engine and task scheduling
-- [**Memory**](/docs/core/memory/knowledge_graph.md) - Knowledge graph and memory management
-- [**Planning**](/docs/core/planning/) - Strategic and tactical planning components
-- [**Tools**](/docs/core/tools/) - Tool registry and execution framework
-
-### [Operations](/docs/operations/)
-
-- [**Deployment**](/docs/operations/deployment/index.md) - Operational readiness and deployment
-- [**Security**](/docs/operations/security/index.md) - Security model and sandboxing
-- [**Resource Management**](/docs/operations/resource_management/index.md) - Resource management architecture
-
-### [Development](/docs/development/)
-
-- [**Developer Onboarding**](/docs/development/onboarding.md) - Getting started for new developers
-- [**Local Development Setup**](/docs/development/setup.md) - Setting up your development environment
-- [**Style Guide**](/docs/development/style_guide.md) - Code style and design principles
-- [**Testing Framework**](/docs/development/testing.md) - Testing framework and strategies
-- [**Contribution Guidelines**](/docs/development/contribution.md) - Contribution guidelines
-
-### [Critical Implementation Guides](/docs/documentation_upgrade/)
-
-- [**Testing Framework for Agent Systems**](/docs/documentation_upgrade/testing_framework_for_agent_systems.md) - Specialized testing approaches
-- [**Resilience and Failure Recovery**](/docs/documentation_upgrade/resilience_and_failure_recovery_architecture.md) - Multi-level recovery strategies
-- [**Security Model and Sandboxing**](/docs/documentation_upgrade/security_model_and_sandboxing.md) - Agent isolation and security
-- [**Resource Management Architecture**](/docs/documentation_upgrade/resource_management_architecture.md) - Dynamic resource allocation
-- [**Agent Specialization Framework**](/docs/documentation_upgrade/agent_specialization_framework.md) - Capability-based agent architecture
-- [**Knowledge Management Pipelines**](/docs/documentation_upgrade/knowledge_management_pipelines.md) - Hybrid knowledge representation
-- [**Human-in-the-Loop Coordination**](/docs/documentation_upgrade/human_in_the_loop_coordination.md) - Intervention architecture
-- [**Operational Readiness & Deployment**](/docs/documentation_upgrade/operational_readiness_and_deployment.md) - Production deployment
-
-## 🛠️ Architecture
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Rick1330/Nexus-Framework/docs-restructure/docs/assets/nexus_architecture.png" alt="Nexus Architecture" width="800px" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x500/0d1117/ffffff?text=NEXUS+ARCHITECTURE+DIAGRAM'"/>
-</p>
-
-Nexus Framework v2.3 is built on a layered architecture that combines:
-
-1. **Core Layer** - Fundamental components including orchestration, memory, and security
-2. **Agent Layer** - Specialized agents with domain-specific capabilities
-3. **Integration Layer** - Connections to external tools, APIs, and services
-4. **Interface Layer** - Human interaction points and developer tools
-
-This architecture ensures separation of concerns while enabling seamless communication between components, resulting in a system that is both robust and flexible.
-
-## 🚦 Getting Started
-
-### Prerequisites
-
-- Python 3.9+
-- Node.js 16+
-- Docker and Docker Compose
-- Git
-
-### Quick Start
+## 🚦 Quick Start
 
 ```bash
 # Clone the repository
@@ -188,7 +129,134 @@ python scripts/setup.py
 python scripts/dev_server.py
 ```
 
+### Prerequisites
+
+- Python 3.9+
+- Node.js 16+
+- Docker and Docker Compose
+- Git
+
+<details>
+<summary><b>⚙️ Advanced Setup Options</b></summary>
+<br>
+
+```bash
+# Development setup with all optional dependencies
+pip install -e ".[dev,test,docs]"
+
+# Configure environment variables
+cp .env.example .env
+# Edit .env with your settings
+
+# Run with custom configuration
+python scripts/dev_server.py --config=custom_config.yaml
+```
+
 For detailed setup instructions, see the [Local Development Setup Guide](/docs/development/setup.md).
+</details>
+
+## 📚 Documentation
+
+Nexus Framework v2.3 includes comprehensive documentation organized into a clean, modular hierarchy:
+
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <h3>Core Documentation</h3>
+      <ul>
+        <li><a href="/docs/architecture/overview.md">Architecture Overview</a></li>
+        <li><a href="/docs/architecture/technical_blueprint.md">Technical Blueprint</a></li>
+        <li><a href="/docs/architecture/agent_layers.md">Agent Layers</a></li>
+        <li><a href="/docs/core/agents/index.md">Agent Framework</a></li>
+        <li><a href="/docs/core/orchestration/workflow_engine.md">Orchestration</a></li>
+        <li><a href="/docs/core/memory/knowledge_graph.md">Memory System</a></li>
+      </ul>
+    </td>
+    <td width="33%" valign="top">
+      <h3>Implementation Guides</h3>
+      <ul>
+        <li><a href="/docs/documentation_upgrade/testing_framework_for_agent_systems.md">Testing Framework</a></li>
+        <li><a href="/docs/documentation_upgrade/resilience_and_failure_recovery_architecture.md">Resilience & Recovery</a></li>
+        <li><a href="/docs/documentation_upgrade/security_model_and_sandboxing.md">Security Model</a></li>
+        <li><a href="/docs/documentation_upgrade/resource_management_architecture.md">Resource Management</a></li>
+        <li><a href="/docs/documentation_upgrade/agent_specialization_framework.md">Agent Specialization</a></li>
+        <li><a href="/docs/documentation_upgrade/knowledge_management_pipelines.md">Knowledge Management</a></li>
+      </ul>
+    </td>
+    <td width="33%" valign="top">
+      <h3>Developer Resources</h3>
+      <ul>
+        <li><a href="/docs/development/onboarding.md">Developer Onboarding</a></li>
+        <li><a href="/docs/development/setup.md">Local Development Setup</a></li>
+        <li><a href="/docs/development/style_guide.md">Style Guide</a></li>
+        <li><a href="/docs/development/testing.md">Testing Guidelines</a></li>
+        <li><a href="/docs/development/contribution.md">Contribution Guidelines</a></li>
+        <li><a href="/docs/tutorials/quickstart.md">Quickstart Tutorial</a></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<details>
+<summary><b>📖 Full Documentation Map</b></summary>
+<br>
+
+### System Architecture
+- [Architecture Overview](/docs/architecture/overview.md)
+- [Technical Blueprint](/docs/architecture/technical_blueprint.md)
+- [Agent Layers](/docs/architecture/agent_layers.md)
+- [Modular Multi-Agent Architecture](/docs/architecture/modular_multi_agent_architecture.md)
+- [Multi-Domain Engineering](/docs/architecture/multi_domain_engineering.md)
+
+### Core Components
+- [Agents Framework](/docs/core/agents/index.md)
+  - [Agent Specialization](/docs/core/agents/specialization.md)
+  - [Agent Roles](/docs/core/agents/roles.md)
+  - [Agent Roles and Protocols](/docs/core/agents/agent_roles_and_protocols.md)
+- [Orchestration](/docs/core/orchestration/workflow_engine.md)
+  - [Workflow Engine](/docs/core/orchestration/workflow_engine.md)
+  - [Task Scheduling](/docs/core/orchestration/task_scheduling.md)
+  - [Failure Recovery](/docs/core/orchestration/failure_recovery.md)
+  - [Orchestration and Fallback](/docs/core/orchestration/orchestration_and_fallback.md)
+- [Memory System](/docs/core/memory/knowledge_graph.md)
+
+### Operations
+- [Deployment](/docs/operations/deployment/index.md)
+- [Security](/docs/operations/security/index.md)
+- [Resource Management](/docs/operations/resource_management/index.md)
+
+### Integrations
+- [GitHub Integration](/docs/integrations/github.md)
+- [GitHub Integration and CI/CD](/docs/integrations/github_integration_and_cicd.md)
+- [External Tool Integration](/docs/integrations/external_tool_integration.md)
+- [Open Source Integration Map](/docs/integrations/open_source_integration_map.md)
+
+### Critical Implementation Guides
+- [Testing Framework for Agent Systems](/docs/documentation_upgrade/testing_framework_for_agent_systems.md)
+- [Resilience and Failure Recovery](/docs/documentation_upgrade/resilience_and_failure_recovery_architecture.md)
+- [Security Model and Sandboxing](/docs/documentation_upgrade/security_model_and_sandboxing.md)
+- [Resource Management Architecture](/docs/documentation_upgrade/resource_management_architecture.md)
+- [Agent Specialization Framework](/docs/documentation_upgrade/agent_specialization_framework.md)
+- [Knowledge Management Pipelines](/docs/documentation_upgrade/knowledge_management_pipelines.md)
+- [Human-in-the-Loop Coordination](/docs/documentation_upgrade/human_in_the_loop_coordination.md)
+- [Operational Readiness & Deployment](/docs/documentation_upgrade/operational_readiness_and_deployment.md)
+
+</details>
+
+## 🛠️ Architecture
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Rick1330/Nexus-Framework/docs-restructure/docs/assets/nexus_architecture.png" alt="Nexus Architecture" width="800px" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x500/0d1117/ffffff?text=NEXUS+ARCHITECTURE+DIAGRAM'"/>
+</p>
+
+Nexus Framework v2.3 is built on a layered architecture that combines:
+
+1. **Core Layer** - Fundamental components including orchestration, memory, and security
+2. **Agent Layer** - Specialized agents with domain-specific capabilities
+3. **Integration Layer** - Connections to external tools, APIs, and services
+4. **Interface Layer** - Human interaction points and developer tools
+
+This architecture ensures separation of concerns while enabling seamless communication between components, resulting in a system that is both robust and flexible.
 
 ## 📈 Roadmap
 
@@ -243,6 +311,29 @@ For detailed setup instructions, see the [Local Development Setup Guide](/docs/d
 ## 🤝 Contributing
 
 We welcome contributions to the Nexus Framework! Please see our [Contribution Guidelines](/docs/development/contribution.md) for details on how to get involved.
+
+### Development Workflow
+
+```mermaid
+graph TD
+    A[Fork Repository] --> B[Create Feature Branch]
+    B --> C[Implement Changes]
+    C --> D[Run Tests]
+    D --> E{Tests Pass?}
+    E -->|No| C
+    E -->|Yes| F[Submit Pull Request]
+    F --> G[Code Review]
+    G --> H{Approved?}
+    H -->|No| C
+    H -->|Yes| I[Merge to Main]
+```
+
+## 👥 Contributors
+
+<p align="center">
+  <a href="https://github.com/Rick1330"><img src="https://github.com/Rick1330.png" width="50px" alt="Rick1330" title="Rick1330 - Project Lead"/></a>
+  <!-- Add more contributors as the project grows -->
+</p>
 
 ## 📄 License
 
