@@ -1,14 +1,14 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Rick1330/Nexus-Framework/dev-intelligence-pack/docs/assets/nexus_banner.png" alt="Nexus Framework" width="850px" onerror="this.onerror=null; this.src='https://via.placeholder.com/850x200/0d1117/ffffff?text=NEXUS+FRAMEWORK+v2.3'"/>
+  <img src="https://raw.githubusercontent.com/Rick1330/Nexus-Framework/docs-restructure/docs/assets/nexus_banner.png" alt="Nexus Framework" width="850px" onerror="this.onerror=null; this.src='https://via.placeholder.com/850x200/0d1117/ffffff?text=NEXUS+FRAMEWORK+v2.3'"/>
 </p>
 
 <h1 align="center">Nexus Framework v2.3</h1>
 
 <p align="center">
   <a href="https://github.com/Rick1330/Nexus-Framework/releases/tag/v2.3"><img src="https://img.shields.io/badge/version-2.3-blue?style=for-the-badge" alt="Version 2.3"></a>
-  <a href="https://github.com/Rick1330/Nexus-Framework/tree/dev-intelligence-pack"><img src="https://img.shields.io/badge/status-pre--release-orange?style=for-the-badge" alt="Status"></a>
-  <a href="https://github.com/Rick1330/Nexus-Framework/blob/dev-intelligence-pack/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" alt="License"></a>
-  <a href="https://github.com/Rick1330/Nexus-Framework/tree/dev-intelligence-pack/docs/documentation_upgrade"><img src="https://img.shields.io/badge/docs-comprehensive-purple?style=for-the-badge" alt="Documentation"></a>
+  <a href="https://github.com/Rick1330/Nexus-Framework/tree/docs-restructure"><img src="https://img.shields.io/badge/status-pre--release-orange?style=for-the-badge" alt="Status"></a>
+  <a href="https://github.com/Rick1330/Nexus-Framework/blob/docs-restructure/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" alt="License"></a>
+  <a href="https://github.com/Rick1330/Nexus-Framework/tree/docs-restructure/docs"><img src="https://img.shields.io/badge/docs-comprehensive-purple?style=for-the-badge" alt="Documentation"></a>
 </p>
 
 <p align="center">
@@ -102,38 +102,52 @@ This framework is designed from the ground up with modularity, scalability, and 
 
 ## 📚 Documentation
 
-Nexus Framework v2.3 includes comprehensive documentation organized into a clear, modular hierarchy:
+Nexus Framework v2.3 includes comprehensive documentation organized into a clean, modular hierarchy:
 
-### Core Documentation
+### [System Overview](/docs/index.md)
 
-- [**Technical Blueprint**](docs/technical_blueprint.md) - System architecture and design principles
-- [**Agent Layers and Communication Flow**](docs/agent_layers_and_communication_flow_diagrams.md) - Agent specializations and interactions
-- [**Open Source Integration Map**](docs/open_source_integration_map.md) - Integration patterns with external frameworks
-- [**Strategic System Summary**](docs/strategic_system_summary.md) - High-level overview and roadmap
+- [**Architecture Overview**](/docs/architecture/overview.md) - High-level architectural vision and principles
+- [**Technical Blueprint**](/docs/architecture/technical_blueprint.md) - Detailed technical blueprint and system design
+- [**Agent Layers**](/docs/architecture/agent_layers.md) - Agent layers and communication flows
+- [**Strategic System Summary**](/docs/strategic_system_summary.md) - High-level overview and roadmap
 
-### Critical Implementation Documentation
+### [Core Components](/docs/core/index.md)
 
-- [**Testing Framework for Agent Systems**](docs/documentation_upgrade/testing_framework_for_agent_systems.md) - Specialized testing approaches for non-deterministic agent behaviors
-- [**Resilience and Failure Recovery**](docs/documentation_upgrade/resilience_and_failure_recovery_architecture.md) - Multi-level recovery strategies and failure handling
-- [**Security Model and Sandboxing**](docs/documentation_upgrade/security_model_and_sandboxing.md) - Agent isolation and secure tool access framework
-- [**Resource Management Architecture**](docs/documentation_upgrade/resource_management_architecture.md) - Dynamic resource allocation and optimization
-- [**Agent Specialization Framework**](docs/documentation_upgrade/agent_specialization_framework.md) - Capability-based agent architecture and specialization
-- [**Knowledge Management Pipelines**](docs/documentation_upgrade/knowledge_management_pipelines.md) - Hybrid knowledge representation and retrieval
-- [**Human-in-the-Loop Coordination**](docs/documentation_upgrade/human_in_the_loop_coordination.md) - Intervention architecture and expert routing
-- [**Operational Readiness & Deployment**](docs/documentation_upgrade/operational_readiness_and_deployment.md) - Production deployment patterns and monitoring
+- [**Agents**](/docs/core/agents/index.md) - Agent specialization framework and roles
+- [**Orchestration**](/docs/core/orchestration/workflow_engine.md) - Workflow engine and task scheduling
+- [**Memory**](/docs/core/memory/knowledge_graph.md) - Knowledge graph and memory management
+- [**Planning**](/docs/core/planning/) - Strategic and tactical planning components
+- [**Tools**](/docs/core/tools/) - Tool registry and execution framework
 
-### Developer Resources
+### [Operations](/docs/operations/)
 
-- [**Developer Onboarding Guide**](docs/developer_intelligence_pack/01_developer_onboarding_guide.md) - Getting started for new developers
-- [**Codebase Overview**](docs/developer_intelligence_pack/02_codebase_overview.md) - Module structure and component interactions
-- [**Style and Design Principles**](docs/developer_intelligence_pack/03_style_and_design_principles.md) - Coding standards and architectural patterns
-- [**Local Development Setup**](docs/developer_intelligence_pack/06_local_development_setup.md) - Setting up your development environment
-- [**Implementation Plan**](docs/developer_intelligence_pack/07_implementation_plan.md) - Phased approach to system implementation
+- [**Deployment**](/docs/operations/deployment/index.md) - Operational readiness and deployment
+- [**Security**](/docs/operations/security/index.md) - Security model and sandboxing
+- [**Resource Management**](/docs/operations/resource_management/index.md) - Resource management architecture
+
+### [Development](/docs/development/)
+
+- [**Developer Onboarding**](/docs/development/onboarding.md) - Getting started for new developers
+- [**Local Development Setup**](/docs/development/setup.md) - Setting up your development environment
+- [**Style Guide**](/docs/development/style_guide.md) - Code style and design principles
+- [**Testing Framework**](/docs/development/testing.md) - Testing framework and strategies
+- [**Contribution Guidelines**](/docs/development/contribution.md) - Contribution guidelines
+
+### [Critical Implementation Guides](/docs/documentation_upgrade/)
+
+- [**Testing Framework for Agent Systems**](/docs/documentation_upgrade/testing_framework_for_agent_systems.md) - Specialized testing approaches
+- [**Resilience and Failure Recovery**](/docs/documentation_upgrade/resilience_and_failure_recovery_architecture.md) - Multi-level recovery strategies
+- [**Security Model and Sandboxing**](/docs/documentation_upgrade/security_model_and_sandboxing.md) - Agent isolation and security
+- [**Resource Management Architecture**](/docs/documentation_upgrade/resource_management_architecture.md) - Dynamic resource allocation
+- [**Agent Specialization Framework**](/docs/documentation_upgrade/agent_specialization_framework.md) - Capability-based agent architecture
+- [**Knowledge Management Pipelines**](/docs/documentation_upgrade/knowledge_management_pipelines.md) - Hybrid knowledge representation
+- [**Human-in-the-Loop Coordination**](/docs/documentation_upgrade/human_in_the_loop_coordination.md) - Intervention architecture
+- [**Operational Readiness & Deployment**](/docs/documentation_upgrade/operational_readiness_and_deployment.md) - Production deployment
 
 ## 🛠️ Architecture
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Rick1330/Nexus-Framework/dev-intelligence-pack/docs/assets/nexus_architecture.png" alt="Nexus Architecture" width="800px" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x500/0d1117/ffffff?text=NEXUS+ARCHITECTURE+DIAGRAM'"/>
+  <img src="https://raw.githubusercontent.com/Rick1330/Nexus-Framework/docs-restructure/docs/assets/nexus_architecture.png" alt="Nexus Architecture" width="800px" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x500/0d1117/ffffff?text=NEXUS+ARCHITECTURE+DIAGRAM'"/>
 </p>
 
 Nexus Framework v2.3 is built on a layered architecture that combines:
@@ -161,8 +175,8 @@ This architecture ensures separation of concerns while enabling seamless communi
 git clone https://github.com/Rick1330/Nexus-Framework.git
 cd Nexus-Framework
 
-# Switch to the development branch
-git checkout dev-intelligence-pack
+# Switch to the documentation branch
+git checkout docs-restructure
 
 # Install dependencies
 pip install -e .
@@ -174,7 +188,7 @@ python scripts/setup.py
 python scripts/dev_server.py
 ```
 
-For detailed setup instructions, see the [Local Development Setup Guide](docs/developer_intelligence_pack/06_local_development_setup.md).
+For detailed setup instructions, see the [Local Development Setup Guide](/docs/development/setup.md).
 
 ## 📈 Roadmap
 
@@ -228,7 +242,7 @@ For detailed setup instructions, see the [Local Development Setup Guide](docs/de
 
 ## 🤝 Contributing
 
-We welcome contributions to the Nexus Framework! Please see our [Contribution Guidelines](docs/developer_intelligence_pack/04_collaboration_protocols.md) for details on how to get involved.
+We welcome contributions to the Nexus Framework! Please see our [Contribution Guidelines](/docs/development/contribution.md) for details on how to get involved.
 
 ## 📄 License
 
@@ -241,7 +255,7 @@ Created and maintained by [Rick1330](https://github.com/Rick1330) (elishum8@gmai
 <hr>
 
 <p align="center">
-  <a href="https://github.com/Rick1330/Nexus-Framework/tree/dev-intelligence-pack/docs/documentation_upgrade">Documentation</a> •
+  <a href="/docs/index.md">Documentation</a> •
   <a href="https://github.com/Rick1330/Nexus-Framework/issues">Report Bug</a> •
   <a href="https://github.com/Rick1330/Nexus-Framework/issues">Request Feature</a>
 </p>
