@@ -60,7 +60,18 @@ The Specialized Agent Layer comprises a diverse ecosystem of purpose-built agent
 - **Collaborate with Other Agents**: Work together to solve complex problems requiring multiple domains of expertise.
 - **Adapt and Learn**: Continuously improve their capabilities based on execution feedback and outcomes.
 
-The framework includes specialized agents for software development, data engineering, DevOps, testing, documentation, UI/UX design, and project management, each with tailored capabilities and integration points.
+The framework includes specialized agents for software development, data engineering, DevOps, testing, documentation, and project management, each with tailored capabilities and integration points.
+
+#### MetaGPT Integration for Frontend and Design
+
+A key architectural enhancement in Nexus v2.0 is the native integration of MetaGPT as the core engine for frontend development and design capabilities. Rather than relying on external services like mgx.dev, the system leverages MetaGPT's role-based multi-agent framework to provide:
+
+- **Role-Based Design Teams**: Simulates cross-functional teams with Designer, Product Manager, Architect, and Engineer roles working in concert.
+- **UI/UX Generation Pipeline**: End-to-end process from requirements to wireframes to implementation.
+- **Architecture Bootstrapping**: Automated system design and planning for frontend components.
+- **Design-Development Coordination**: Seamless handoff between design and implementation phases.
+
+This internal integration enhances controllability, extensibility, and reproducibility in frontend development while maintaining a consistent agent architecture throughout the system.
 
 ### Layer 4: Tool Integration Layer
 
