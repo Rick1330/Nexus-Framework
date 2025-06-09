@@ -55,7 +55,7 @@ This framework is designed from the ground up with modularity, scalability, and 
       <ul>
         <li>Hierarchical agent organization</li>
         <li>Specialized domain experts</li>
-        <li>Native MetaGPT integration</li>
+        <li>Native open-source integration</li>
         <li>Capability-based specialization</li>
       </ul>
     </td>
@@ -117,7 +117,7 @@ git clone https://github.com/Rick1330/Nexus-Framework.git
 cd Nexus-Framework
 
 # Switch to the documentation branch
-git checkout v2.4-documentation
+git checkout v2.5-documentation
 
 # Install dependencies
 pip install -e .
