@@ -1,14 +1,14 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Rick1330/Nexus-Framework/v2.4-documentation/docs/assets/nexus_banner.png" alt="Nexus Framework" width="850px" onerror="this.onerror=null; this.src='https://via.placeholder.com/850x200/0d1117/ffffff?text=NEXUS+FRAMEWORK+v2.4'"/>
+  <img src="https://raw.githubusercontent.com/Rick1330/Nexus-Framework/v2.5-documentation/docs/assets/nexus_banner.png" alt="Nexus Framework" width="850px" onerror="this.onerror=null; this.src='https://via.placeholder.com/850x200/0d1117/ffffff?text=NEXUS+FRAMEWORK+v2.5'"/>
 </p>
 
-<h1 align="center">Nexus Framework v2.4</h1>
+<h1 align="center">Nexus Framework v2.5</h1>
 
 <p align="center">
-  <a href="https://github.com/Rick1330/Nexus-Framework/releases/tag/v2.4"><img src="https://img.shields.io/badge/version-2.4-blue?style=for-the-badge" alt="Version 2.4"></a>
-  <a href="https://github.com/Rick1330/Nexus-Framework/tree/v2.4-documentation"><img src="https://img.shields.io/badge/status-pre--release-orange?style=for-the-badge" alt="Status"></a>
-  <a href="https://github.com/Rick1330/Nexus-Framework/blob/v2.4-documentation/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" alt="License"></a>
-  <a href="https://github.com/Rick1330/Nexus-Framework/tree/v2.4-documentation/docs"><img src="https://img.shields.io/badge/docs-comprehensive-purple?style=for-the-badge" alt="Documentation"></a>
+  <a href="https://github.com/Rick1330/Nexus-Framework/releases/tag/v2.5"><img src="https://img.shields.io/badge/version-2.5-blue?style=for-the-badge" alt="Version 2.5"></a>
+  <a href="https://github.com/Rick1330/Nexus-Framework/tree/v2.5-documentation"><img src="https://img.shields.io/badge/status-pre--release-orange?style=for-the-badge" alt="Status"></a>
+  <a href="https://github.com/Rick1330/Nexus-Framework/blob/v2.5-documentation/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" alt="License"></a>
+  <a href="https://github.com/Rick1330/Nexus-Framework/tree/v2.5-documentation/docs"><img src="https://img.shields.io/badge/docs-comprehensive-purple?style=for-the-badge" alt="Documentation"></a>
 </p>
 
 <p align="center">
@@ -29,9 +29,9 @@
 
 ## 🌟 Overview
 
-Nexus Framework v2.4 represents a significant evolution in multi-agent systems engineering, integrating cutting-edge open-source agent frameworks with sophisticated orchestration, memory management, and observability capabilities. Built to emulate the internal operations and coordination quality of elite engineering organizations like Google, OpenAI, and Anthropic, Nexus provides a comprehensive platform for developing complex, intelligent systems.
+Nexus Framework v2.5 represents a significant evolution in multi-agent systems engineering, integrating cutting-edge open-source agent frameworks with sophisticated orchestration, memory management, and observability capabilities. Built to emulate the internal operations and coordination quality of elite engineering organizations like Google, OpenAI, and Anthropic, Nexus provides a comprehensive platform for developing complex, intelligent systems.
 
-This framework is designed from the ground up with modularity, scalability, and production readiness at its core. With the v2.4 release, Nexus introduces native MetaGPT integration, advanced testing frameworks, resilient architecture patterns, and human-in-the-loop coordination systems that set new standards for multi-agent engineering.
+This framework is designed from the ground up with modularity, scalability, and production readiness at its core. With the v2.5 release, Nexus introduces native MetaGPT integration, advanced testing frameworks, resilient architecture patterns, and human-in-the-loop coordination systems that set new standards for multi-agent engineering.
 
 <details>
 <summary><b>🔍 Why Nexus Framework?</b></summary>
@@ -157,7 +157,7 @@ For detailed setup instructions, see the [Local Development Setup Guide](/docs/d
 
 ## 📚 Documentation
 
-Nexus Framework v2.4 includes comprehensive documentation organized into a clean, modular hierarchy:
+Nexus Framework v2.5 includes comprehensive documentation organized into a clean, modular hierarchy:
 
 <table>
   <tr>
@@ -246,10 +246,10 @@ Nexus Framework v2.4 includes comprehensive documentation organized into a clean
 ## 🛠️ Architecture
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Rick1330/Nexus-Framework/v2.4-documentation/docs/assets/nexus_architecture.png" alt="Nexus Architecture" width="800px" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x500/0d1117/ffffff?text=NEXUS+ARCHITECTURE+DIAGRAM'"/>
+  <img src="https://raw.githubusercontent.com/Rick1330/Nexus-Framework/v2.5-documentation/docs/assets/nexus_architecture.png" alt="Nexus Architecture" width="800px" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x500/0d1117/ffffff?text=NEXUS+ARCHITECTURE+DIAGRAM'"/>
 </p>
 
-Nexus Framework v2.4 is built on a layered architecture that combines:
+Nexus Framework v2.5 is built on a layered architecture that combines:
 
 1. **Core Layer** - Fundamental components including orchestration, memory, and security
 2. **Agent Layer** - Specialized agents with domain-specific capabilities
